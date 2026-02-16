@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'payment',
     'user',
     'quiz',
+    'home',
 ]
 
 MIDDLEWARE = [
