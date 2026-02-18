@@ -1,0 +1,12 @@
+body{
+    height: 100vh;
+    overflow-x: hidden;
+    scroll-behavior: auto;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}

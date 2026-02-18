@@ -7,7 +7,7 @@
     
     {% block meta %}
         <meta http-equiv="X-UA-Compatible" content="ie-edge">
-        <meta charset="utf-8">
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% endblock %}
 
@@ -33,7 +33,7 @@
     {% block extra_js %}
     {% endblock %}
 
-    <title>Boutique Ado {% block extra_title %}{% endblock %}</title>
+    <title>MathRise {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
     <header class="container-fluid fixed-top">
@@ -44,6 +44,9 @@
                 </a>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+                <a href="{% url 'dashboard' %}" class="nav-link main-logo-link">
+                    <h2 class="logo-font text-black my-0">Dashboard</h2>
+                </a>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
@@ -59,7 +62,7 @@
                                 {% if request.user.is_superuser %}
                                     <a href="" class="dropdown-item">Question Management</a>
                                 {% endif %}
-                                <a href="" class="dropdown-item">My Profile</a>
+                                <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                                 <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                             {% else %}
                                 <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
@@ -75,16 +78,9 @@
                 <button class = "navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                {% include 'includes/mobile-top-header.html' %}
-                {% include 'includes/main-nav.html' %}
             </nav>
         </div>
-        <div id="delivery-banner" class="row text-center">
-            <div class="col bg-black text-white">
-                <h4 class="logo-font my-1"></h4>
-            </div>
-        </div>
-    </header>
+    </nav>
 
     {% if messages %}
     <div class="message-container"></div>
@@ -96,8 +92,18 @@
     {% block content %}
     {% endblock %}
 
+    <footer class="footer mt-auto bg-dark py-3">
+        <p class="m-0 text-center text-black"></p>
+        <p class="m-0 text-center text-black">Follow us: <i class="fab fa-facebook-square ms-3"></i>
+            <i class="fab fa-twitter-square ms-3"></i>
+            <i class="fab fa-instagram-square ms-3"></i>
+            <i class="fab fa-youtube-square ms-3"></i>
+        </p>
+    </footer>
+
     {% block postloadjs %}
     {% endblock %}
+
 
   </body>
 </html>
