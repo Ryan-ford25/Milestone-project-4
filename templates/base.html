@@ -38,48 +38,32 @@
   </head>
   <body>
     <nav class="container-fluid">
-        <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
+        <div id="topnav" class="row bg-white py-3">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
                     <h2 class="logo-font text-black my-0"><strong>Math</strong>Rise</h2>
                 </a>
             </div>
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center">
                 <a href="{% url 'dashboard' %}" class="nav-link main-logo-link">
                     <h2 class="my-0 text-black n">Dashboard</h2>
                 </a>
             </div>
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                <ul class="list-inline list-unstyled text-center text-lg-right my-0">
-                    <li class="list-inline-item dropdown">
-                        <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <div class="text-center">
-                                <div><i class="fas fa-user fa-lg"></i></div>
-                                <p class="my-0">My Account</p>
-                            </div>
-                        </a>
-                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                            {% if request.user.is_authenticated %}
-                                {% if request.user.is_superuser %}
-                                    <a href="" class="dropdown-item">Question Management</a>
-                                {% endif %}
-                                <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                            {% else %}
-                                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                            {% endif %}
-                        </div>
-                    </li>
+            <div class="dropdown col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-right">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-circle-user"></i></button>
+                <ul class="dropdown-menu">
+                    {% if request.user.is_authenticated %}
+                        {% if request.user.is_superuser %}
+                            <li><a class="dropdown-item text-black nav-link" href="">Question Management</a></li>
+                        {% endif %}
+                        <li><a class="dropdown-item text-black nav-link"  href="{% url 'profile' %}">My Profile</a></li>
+                        <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
+                    {% else %}
+                        <li><a class="dropdown-item" href="{% url 'account_signup' %}">Register</a></li>
+                        <li><a class="dropdown-item" href="{% url 'account_login' %}">Login</a></li>
+                    {% endif %}
                 </ul>
             </div>
-        </div>
-        <div class="row bg-white">
-            <nav class="navbar navbar-expand-lg navbar-light w-100">
-                <button class = "navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </nav>
         </div>
     </nav>
 
