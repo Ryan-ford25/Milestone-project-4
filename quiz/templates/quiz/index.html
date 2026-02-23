@@ -6,20 +6,23 @@
 {% block content %}
     <div class="container">
         <h1 class="logo-font text-center my-5">Questions</h1>
-    </div>
-    <div class="container text-center">
         <div class="row">
             {% for question in questions %}
-                <div class="card col-sm-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ question.question_text }}</h5>
-                        <p class="card-text">Difficulty: {{ question.get_difficulty_display }}</p>
-                        <p class="card-text">Points: {{ question.points }}</p>
-                        {% if question.is_premium %}
-                            <p class="card-text text-danger">Premium Question</p>
-                        {% endif %}
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100">
+                        <button type="button" class="btn btn-link p-0 text-left w-100" data-bs-toggle="modal" data-bs-target="#questionModal{{ question.id }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ question.question_text }}</h5>
+                                <p class="card-text">Difficulty: {{ question.get_difficulty_display }}</p>
+                                <p class="card-text">Points: {{ question.points }}</p>
+                                {% if question.is_premium %}
+                                    <p class="card-text text-danger">Premium Question</p>
+                                {% endif %}
+                            </div>
+                        </button>
                     </div>
                 </div>
+                {% include "quiz/modal.html" with question=question %}
             {% endfor %}
         </div>
     </div>
