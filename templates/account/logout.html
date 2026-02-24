@@ -1,0 +1,17 @@
+    {% extends 'base.html' %}
+    {% load static %}
+
+    {% block extra_title %}Logout{% endblock %}
+
+    {% block content %}
+        <div class="container">
+            <h1 class="logo-font text-center my-5">Logout</h1>
+        </div>
+        <h2 class="text-center">Are you sure you want to logout?</h2>
+        <div class="text-center">
+            <form method="post" action="{% url 'account_logout' %}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">Logout</button>
+            </form>
+        </div>
+    {% endblock %}

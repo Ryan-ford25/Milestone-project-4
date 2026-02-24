@@ -8,6 +8,7 @@ def dashboardView(request):
     
     return render(request, 'user/dashboard.html')
 
+@login_required
 def accountProfileView(request):
     """"View for the user profile page of the site."""
     
