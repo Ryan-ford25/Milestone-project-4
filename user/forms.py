@@ -2,7 +2,6 @@ from allauth.account.forms import LoginForm, SignupForm
 from django import forms
 
 class CustomSignupForm(SignupForm):
-    profile_picture = forms.ImageField(required=False)
     first_name = forms.CharField(max_length=30, label='First Name')
     last_name = forms.CharField(max_length=30, label='Last Name')
     email = forms.EmailField(label='Email Address')
@@ -17,8 +16,6 @@ class CustomSignupForm(SignupForm):
 
         profile = user.userprofile
         profile.is_premium = self.cleaned_data['is_premium']
-        if self.cleaned_data['profile_picture']:
-            profile.profile_picture = self.cleaned_data['profile_picture']
         profile.save()
 
         return user

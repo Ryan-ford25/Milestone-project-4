@@ -50,6 +50,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
                     input.disabled = true; // prevent changing answer
                 });
+
+                fetch('/user/points-json/')
+                    .then(response => response.json())
+                    .then(stats => {
+                        document.querySelectorAll("#points-today").forEach(el => el.innerText = stats.points_today);
+                        document.querySelectorAll("#points-week").forEach(el => el.innerText = stats.points_week);
+                        document.querySelectorAll("#points-month").forEach(el => el.innerText = stats.points_month);
+                        document.querySelectorAll("#accuracy").forEach(el => el.innerText = stats.accuracy);
+                    });
             });
         });
     });

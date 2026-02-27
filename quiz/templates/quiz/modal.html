@@ -1,33 +1,61 @@
 <div class="modal fade" id="questionModal{{ question.id }}" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-fullscreen-sm-down modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">{{ question.question_text }}</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        {% if question.is_premium and not user.is_premium %}
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">{{ question.question_text }}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-warning">
+                        This is a premium question. Upgrade to premium to access it!
+                    </div>
+                    <a href=# class="btn btn-primary">Upgrade Now</a>
+                </div>
             </div>
-            <div class="modal-body">
-                <form class="quiz-form" data-url="{% url 'submit_answer' question.id %}">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="answer" value="A" required>
-                        <label class="form-check-label">{{ question.choice_1 }}</label>
+        {% elif user is not authenticated %}
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">{{ question.question_text }}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-info">
+                        Please log in to attempt this question and earn points!
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="answer" value="B">
-                        <label class="form-check-label">{{ question.choice_2 }}</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="answer" value="C">
-                        <label class="form-check-label">{{ question.choice_3 }}</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="answer" value="D">
-                        <label class="form-check-label">{{ question.choice_4 }}</label>
-                    </div>
-                    <div class="mt-3 text-end">
-                        <button type="submit" class="btn btn-primary">Submit Answer</button>
-                    </div>
-                </form>
+                    <a href="{% url 'account_login' %}" class="btn btn-primary">Log In</a>
+                </div>
             </div>
-        </div>
+        {% else %}
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">{{ question.question_text }}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="quiz-form" data-url="{% url 'submit_answer' question.id %}">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="answer" value="A" required>
+                            <label class="form-check-label">{{ question.choice_1 }}</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="answer" value="B">
+                            <label class="form-check-label">{{ question.choice_2 }}</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="answer" value="C">
+                            <label class="form-check-label">{{ question.choice_3 }}</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="answer" value="D">
+                            <label class="form-check-label">{{ question.choice_4 }}</label>
+                        </div>
+                        <div class="mt-3 text-end">
+                            <button type="submit" class="btn btn-primary">Submit Answer</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        {% endif %}
     </div>
 </div>
