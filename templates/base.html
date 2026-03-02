@@ -39,12 +39,12 @@
   <body>
     <nav class="container-fluid">
         <div id="topnav" class="row bg-white py-3">
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
+            <div class="text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
                     <h2 class="logo-font text-black my-0"><strong>Math</strong>Rise</h2>
                 </a>
             </div>
-            <div class="dropdown col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-right">
+            <div class="dropdown text-center text-lg-right">
                 <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-circle-user"></i></button>
                 <ul class="dropdown-menu">
                     {% if request.user.is_authenticated %}

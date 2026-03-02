@@ -22,4 +22,5 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('', include('quiz.urls')),
     path('', include('user.urls')),
+    path('', include('payment.urls')),
 ]
