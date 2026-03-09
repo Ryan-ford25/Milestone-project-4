@@ -4,20 +4,14 @@
 {% block extra_title %} - Profile{% endblock %}
 
 {% block content %}
-    <h2>Your Performance</h2>
-    
-    <p><strong>Points Today:</strong> {{ points_today }}</p>
-    <p><strong>Points This Week:</strong> {{ points_week }}</p>
-    <p><strong>Points This Month:</strong> {{ points_month }}</p>
+    <div>
+        <h1 class="logo-font text-center my-5">My Profile</h1>
+    </div>
+    <div>
+        <div> first name: {{ user.first_name }}</div>
+        <div> last name: {{ user.last_name }}</div>
+        <div> email: {{ user.email }}</div>
+        <div> subscription status: {{ subscription_status }}</div>
+    </div>
 
-    {% if is_premium %} 
-        <hr>
-        <h3>Premium Stats</h3>
-        <p><strong>Accuracy:</strong> {{ accuracy }}%</p>
-    {% else %}
-        <hr>
-        <div class="alert alert-info">
-            Upgrade to Premium to unlock accuracy tracking.
-        </div>
-    {% endif %}
 {% endblock %}

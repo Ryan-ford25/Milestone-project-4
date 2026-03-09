@@ -4,12 +4,16 @@ from django.utils import timezone
 from django.db.models import Count, Sum
 from datetime import timedelta
 from django.contrib.auth.models import User
+from .models import UserProfile
+
+import user
+from .models import UserProfile
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 @login_required
-def accountProfileView(request):
-    """"View for the user profile page of the site."""
+def dashboardView(request):
+    """View for the user dashboard page of the site."""
     user = request.user
     attempts = request.user.attempts.all()
     userprofile = request.user.userprofile
@@ -46,3 +50,55 @@ def accountProfileView(request):
         'accuracy': accuracy,
     }
     return render(request, 'user/profile.html', context)
+
+@login_required
+def accountProfileView(request):
+    """View for the user profile page of the site."""
+    user = request.user
+    userprofile = request.user.userprofile
+    username = user.username
+    email = user.email
+    subscription_status = "Premium" if userprofile.is_premium else "Free"
+    context = {
+        'userprofile': userprofile,
+        'email': email,
+        'username': username,
+        'subscription_status': subscription_status,
+    }
+    return render(request, 'user/profile.html', context)
+
+@login_required
+def editProfileView(request):
+    """View for the user profile edit page of the site."""
+    user = request.user
+    userprofile = request.user.userprofile
+
+    if request.method == 'POST':
+        # Update user and user profile information based on form data
+        user.first_name = request.POST.get('first_name', user.first_name)
+        user.last_name = request.POST.get('last_name', user.last_name)
+        user.email = request.POST.get('email', user.email)
+        user.save()
+
+        # Update additional profile fields if needed
+        # For example, if you have a 'bio' field in your UserProfile model:
+        # userprofile.bio = request.POST.get('bio', userprofile.bio)
+        # userprofile.save()
+
+    context = {
+        'userprofile': userprofile,
+    }
+    return render(request, 'user/edit_profile.html', context)
+
+@login_required
+def dashboardView(request):
+    """View for the user dashboard page of the site."""
+    user = request.user
+    attempts = request.user.attempts.all()
+    userprofile = request.user.userprofile
+
+    context = {
+        'userprofile': userprofile,
+        'attempts': attempts,
+    }
+    return render(request, 'user/dashboard.html', context)

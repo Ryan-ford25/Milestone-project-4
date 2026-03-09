@@ -182,3 +182,8 @@ else:
     DEFAULT_FROM_EMAIL = os.environ.get("EMAIL_HOST_USER")
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Stripe settings
+STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY")
+STRIPE_PUBLIC_KEY = os.environ.get("STRIPE_PUBLIC_KEY")
