@@ -49,13 +49,15 @@ def dashboardView(request):
         'points_month': points_month,
         'accuracy': accuracy,
     }
-    return render(request, 'user/profile.html', context)
+    return render(request, 'user/dashboard.html', context)
 
 @login_required
 def accountProfileView(request):
     """View for the user profile page of the site."""
     user = request.user
     userprofile = request.user.userprofile
+    first_name = user.first_name
+    last_name = user.last_name
     username = user.username
     email = user.email
     subscription_status = "Premium" if userprofile.is_premium else "Free"
@@ -64,6 +66,8 @@ def accountProfileView(request):
         'email': email,
         'username': username,
         'subscription_status': subscription_status,
+        'first_name': first_name,
+        'last_name': last_name,
     }
     return render(request, 'user/profile.html', context)
 
@@ -79,11 +83,7 @@ def editProfileView(request):
         user.last_name = request.POST.get('last_name', user.last_name)
         user.email = request.POST.get('email', user.email)
         user.save()
-
-        # Update additional profile fields if needed
-        # For example, if you have a 'bio' field in your UserProfile model:
-        # userprofile.bio = request.POST.get('bio', userprofile.bio)
-        # userprofile.save()
+        userprofile.save()
 
     context = {
         'userprofile': userprofile,

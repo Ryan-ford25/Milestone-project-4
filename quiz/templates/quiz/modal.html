@@ -1,6 +1,6 @@
 <div class="modal fade" id="questionModal{{ question.id }}" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-fullscreen-sm-down modal-dialog-centered">
-        {% if question.is_premium and not user.is_premium %}
+        {% if question.is_premium and not user.userprofile.is_premium %}
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{ question.question_text }}</h5>
@@ -13,7 +13,7 @@
                     <a href=# class="btn btn-primary">Upgrade Now</a>
                 </div>
             </div>
-        {% elif user is not authenticated %}
+        {% elif not user.is_authenticated %}
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{ question.question_text }}</h5>

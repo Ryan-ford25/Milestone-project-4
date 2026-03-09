@@ -57,7 +57,7 @@ def payment_success(request):
     session = stripe.checkout.Session.retrieve(session_id)
 
     if session.payment_status == 'paid':
-        user = request.user
+        user = request.user.userprofile
         # Update user's subscription status in your database
         user.is_premium = True
         user.save()

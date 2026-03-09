@@ -11,6 +11,9 @@ def create_user_profile(sender, instance, created, **kwargs):
     if created:
         UserProfile.objects.create(user=instance)
 
+def save_user_profile(sender, instance, **kwargs):
+    instance.userprofile.save()
+
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)

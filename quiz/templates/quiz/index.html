@@ -6,7 +6,7 @@
 {% block content %}
     <div class="container">
         <div>
-            {% if user.is_authenticated and not user.is_premium %}
+            {% if user.is_authenticated and not user.userprofile.is_premium %}
                 <div class="alert alert-info text-center" role="alert">
                     Upgrade to <strong>Premium</strong> to access more questions and get access to performance tracking!
                     <a href="{% url 'upgrade' %}" class="btn btn-sm btn-primary ml-3">Upgrade Now</a>
