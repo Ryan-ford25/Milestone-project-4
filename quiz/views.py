@@ -6,12 +6,14 @@ from django.shortcuts import get_object_or_404, redirect
 from django.contrib import messages
 from .models import Question
 from user.models import UserAttempt
+from django.utils import timezone
 
 from user.models import UserAttempt
 from .models import Question
 
 # Create your views here.
 LETTER_MAP = {1: "A", 2: "B", 3: "C", 4: "D"}
+DAILY_ATTEMPT_LIMIT = 5
 
 def homeView(request):
     """"View for the home page of the site."""
@@ -30,6 +32,17 @@ def homeView(request):
     return render(request, 'quiz/index.html', context)
 
 def submit_answer(request, question_id):
+    today = timezone.now().date()
+
+    #Counts the number of attempts the user has made today
+    attempts_today = UserAttempt.objects.filter(user=request.user, timestamp__date=today).count()
+
+    if not request.user.userprofile.is_premium:
+        if attempts_today == DAILY_ATTEMPT_LIMIT:
+            return JsonResponse({
+            "limit_reached": True,
+        })
+
     if request.method == "POST":
         question = Question.objects.get(id=question_id)
         selected = request.POST.get("answer")  # 'A', 'B', 'C', 'D'
@@ -55,5 +68,5 @@ def submit_answer(request, question_id):
 
         return JsonResponse({
             "correct": is_correct,
-            "correct_answer": correct_letter
+            "correct_answer": correct_letter,
         })

@@ -6,18 +6,19 @@
 {% block content %}
     <h2>Your Performance</h2>
     
-    <p><strong>Points Today:</strong> {{ points_today }}</p>
-    <p><strong>Points This Week:</strong> {{ points_week }}</p>
-    <p><strong>Points This Month:</strong> {{ points_month }}</p>
+    <p><strong>Points Today:</strong> <span id="points-today">{{ points_today }}</span></p>
+    <p><strong>Points This Week:</strong> <span id="points-week">{{ points_week }}</span></p>
+    <p><strong>Points This Month:</strong> <span id="points-month">{{ points_month }}</span></p>
 
-    {% if is_premium %} 
+    {% if user.userprofile.is_premium %} 
         <hr>
         <h3>Premium Stats</h3>
-        <p><strong>Accuracy:</strong> {{ accuracy }}%</p>
+        <p><strong>Accuracy:</strong> <span id="accuracy">{{ accuracy }}</span>%</p>
     {% else %}
         <hr>
         <div class="alert alert-info">
-            Upgrade to Premium to unlock accuracy tracking.
+            Upgrade to premium to see your accuracy and more detailed performance insights!
+            <a href="{% url 'upgrade' %}" class="btn btn-primary ms-3">Upgrade Now</a>
         </div>
     {% endif %}
 {% endblock %}

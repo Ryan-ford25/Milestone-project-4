@@ -1,0 +1,26 @@
+<div class="modal fade" id="attemptLimitModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">Daily Attempts Used</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                You have used your <strong>5 daily attempts</strong> today.
+
+                <br><br>
+
+                Come back tomorrow for more questions, or upgrade to Premium for unlimited attempts.
+            </div>
+
+            <div class="modal-footer">
+                <a href="{% url 'upgrade' %}" class="btn btn-primary">
+                    Upgrade to Premium
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -89,16 +89,3 @@ def editProfileView(request):
         'userprofile': userprofile,
     }
     return render(request, 'user/edit_profile.html', context)
-
-@login_required
-def dashboardView(request):
-    """View for the user dashboard page of the site."""
-    user = request.user
-    attempts = request.user.attempts.all()
-    userprofile = request.user.userprofile
-
-    context = {
-        'userprofile': userprofile,
-        'attempts': attempts,
-    }
-    return render(request, 'user/dashboard.html', context)

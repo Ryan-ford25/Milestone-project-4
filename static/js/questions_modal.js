@@ -31,6 +31,14 @@ document.addEventListener("DOMContentLoaded", function() {
             })
             .then(response => response.json())
             .then(data => {
+
+                //Daily limit check
+                if (data.limit_reached) {
+                    const modal = new bootstrap.Modal(document.getElementById("attemptLimitModal"));
+                    modal.show();
+                    return;
+                }
+
                 const correctAnswer = data.correct_answer;
                 const allOptions = form.querySelectorAll(".form-check");
 

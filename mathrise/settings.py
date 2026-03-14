@@ -115,6 +115,9 @@ LOGOUT_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'mathrise.wsgi.application'
 
+ACCOUNT_FORMS = {
+    'signup': 'user.forms.CustomSignupForm',
+}
 
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
