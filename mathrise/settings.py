@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["127.0.0.1", "heroku.com"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", ".herokuapp.com",]
 
 
 # Application definition
@@ -174,8 +174,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 if os.environ.get("DEVELOPMENT") == "True":
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    DEFAULT_FROM_EMAIL = "verification@mathrise.co.uk"
-    SERVER_EMAIL = "verification@mathrise.co.uk"
+    DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL")
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_USE_TLS = True
@@ -183,7 +182,7 @@ else:
     EMAIL_HOST = 'smtp.gmail.com'
     EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
     EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
-    DEFAULT_FROM_EMAIL = os.environ.get("EMAIL_HOST_USER")
+    DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL")
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -191,3 +190,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Stripe settings
 STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY")
 STRIPE_PUBLIC_KEY = os.environ.get("STRIPE_PUBLIC_KEY")
+
+CSRF_TRUSTED_ORIGINS = ['https://*.codeinstitute-ide.net/',
+                        'https://*.herokuapp.com/']
