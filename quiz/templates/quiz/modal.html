@@ -10,7 +10,7 @@
                     <div class="alert alert-warning">
                         This is a premium question. Upgrade to premium to access it!
                     </div>
-                    <a href=# class="btn btn-primary">Upgrade Now</a>
+                    <a href="{% url 'upgrade' %}" class="btn btn-primary">Upgrade Now</a>
                 </div>
             </div>
         {% elif not user.is_authenticated %}
@@ -33,7 +33,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <form class="quiz-form" data-url="{% url 'submit_answer' question.id %}">
+                    <form class="quiz-form" data-url="{% url 'submit_answer' question.id %}" data-question-id="{{ question.id}}">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="answer" value="A" required>
                             <label class="form-check-label">{{ question.choice_1 }}</label>

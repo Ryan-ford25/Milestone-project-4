@@ -59,6 +59,21 @@ document.addEventListener("DOMContentLoaded", function() {
                     input.disabled = true; // prevent changing answer
                 });
 
+                // disable question card button
+                const questionId = form.dataset.questionId;
+                const questionButton = document.querySelector(`button[data-bs-target="#questionModal${questionId}"]`);
+
+                if (questionButton) {
+                    questionButton.disabled = true;
+                }
+
+                // close modal after 1s
+                setTimeout(() => {
+                    const modalElement = form.closest(".modal");
+                    const modalInstance = bootstrap.Modal.getInstance(modalElement);
+                    modalInstance.hide();
+                }, 1000);
+
                 fetch('/user/points-json/')
                     .then(response => response.json())
                     .then(stats => {
