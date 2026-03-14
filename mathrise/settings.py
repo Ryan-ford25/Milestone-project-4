@@ -26,9 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1", "heroku.com"]
 
 
 # Application definition
@@ -174,7 +174,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 if os.environ.get("DEVELOPMENT") == "True":
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    DEFAULT_FROM_EMAIL = "mathrise@example.com"
+    DEFAULT_FROM_EMAIL = "verification@mathrise.co.uk"
+    SERVER_EMAIL = "verification@mathrise.co.uk"
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_USE_TLS = True
