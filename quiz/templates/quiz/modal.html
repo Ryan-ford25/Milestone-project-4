@@ -1,3 +1,5 @@
+{% load static %}
+
 <div class="modal fade" id="questionModal{{ question.id }}" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-fullscreen-sm-down modal-dialog-centered">
         {% if question.is_premium and not user.userprofile.is_premium %}
@@ -51,7 +53,7 @@
                             <label class="form-check-label">{{ question.choice_4 }}</label>
                         </div>
                         <div class="mt-3 text-end">
-                            <button type="submit" class="btn btn-primary">Submit Answer</button>
+                            <button type="submit" class="solve-btn">Submit Answer</button>
                         </div>
                     </form>
                 </div>

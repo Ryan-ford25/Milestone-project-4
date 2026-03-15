@@ -4,21 +4,79 @@
 {% block extra_title %} - Profile{% endblock %}
 
 {% block content %}
-    <h2>Your Performance</h2>
-    
-    <p><strong>Points Today:</strong> <span id="points-today">{{ points_today }}</span></p>
-    <p><strong>Points This Week:</strong> <span id="points-week">{{ points_week }}</span></p>
-    <p><strong>Points This Month:</strong> <span id="points-month">{{ points_month }}</span></p>
 
-    {% if user.userprofile.is_premium %} 
-        <hr>
-        <h3>Premium Stats</h3>
-        <p><strong>Accuracy:</strong> <span id="accuracy">{{ accuracy }}</span>%</p>
-    {% else %}
-        <hr>
-        <div class="alert alert-info">
+<div class="container dashboard-container">
+
+    <h2 class="dashboard-title">Your Performance</h2>
+
+    <div class="dashboard-grid">
+
+        <div class="stat-card">
+            <span class="stat-icon"></span>
+            <span class="stat-number" id="points-today">{{ points_today }}</span>
+            <span class="stat-label">Points Today</span>
+        </div>
+
+        <div class="stat-card">
+            <span class="stat-icon"></span>
+            <span class="stat-number" id="points-week">{{ points_week }}</span>
+            <span class="stat-label">Points This Week</span>
+        </div>
+
+        <div class="stat-card">
+            <span class="stat-icon"></span>
+            <span class="stat-number" id="points-month">{{ points_month }}</span>
+            <span class="stat-label">Points This Month</span>
+        </div>
+
+        {% if user.userprofile.is_premium %}
+        <div class="stat-card premium-stat accuracy-card">
+            <h3>Accuracy</h3>
+            <canvas id="accuracyChart"></canvas>
+        </div>
+        {% endif %}
+
+    </div>
+
+    {% if not user.userprofile.is_premium %}
+        <div class="upgrade-box">
             Upgrade to premium to see your accuracy and more detailed performance insights!
-            <a href="{% url 'upgrade' %}" class="btn btn-primary ms-3">Upgrade Now</a>
+            <a href="{% url 'upgrade' %}" class="solve-btn">Upgrade Now</a>
         </div>
     {% endif %}
+
+</div>
+
+{% endblock %}
+
+{% block postloadjs %}
+    <script>
+    const accuracy = {{ accuracy }};
+    const incorrect = 100 - accuracy;
+    const ctx = document.getElementById('accuracyChart');
+    
+    new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['Correct', 'Incorrect'],
+            datasets: [{
+                data: [accuracy, incorrect],
+                backgroundColor: [
+                    '#22C55E', // green
+                    '#EF4444'  // red
+                ],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    labels: {
+                        color: 'white'
+                    }
+                }
+            }
+        }
+    });
+    </script>
 {% endblock %}

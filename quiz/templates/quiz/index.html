@@ -13,11 +13,30 @@
                 </div>
             {% endif %}
         </div>
+        <div class="stats-bar">
+            <div class="stat">
+                <span class="stat-icon"></span>
+                <span class="stat-value">{{ user.userprofile.points }}</span>
+                <span class="stat-label">XP</span>
+                </div>
+                
+                <div class="stat">
+                    <span class="stat-icon"></span>
+                    <span class="stat-value">{{ user.userprofile.level }}</span>
+                    <span class="stat-label">Level</span>
+                </div>
+                
+                <div class="stat">
+                    <span class="stat-icon"></span>
+                    <span class="stat-value">{{ user.userprofile.streak }}</span>
+                    <span class="stat-label">Day Streak</span>
+                </div>
+            </div>
         <h1 class="logo-font text-center my-5">Questions</h1>
         <div class="row">
             {% for question in questions %}
                 <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
+                    <div class="question-card h-100">
                         {% if question.id not in answered_questions %}
                             <button type="button" class="btn btn-link p-0 text-left w-100" data-bs-toggle="modal" data-bs-target="#questionModal{{ question.id }}">
                         {% else %}
@@ -25,10 +44,10 @@
                         {% endif %}
                             <div class="card-body">
                                 <h5 class="card-title">{{ question.question_text }}</h5>
-                                <p class="card-text">Difficulty: {{ question.get_difficulty_display }}</p>
-                                <p class="card-text">Points: {{ question.points }}</p>
+                                <span class="difficulty {{ question.get_difficulty_display|lower }}">{{ question.get_difficulty_display }}</span>
+                                <div class="points mt-2">Points: {{ question.points }}</div>
                                 {% if question.is_premium %}
-                                    <p class="card-text text-danger">Premium Question</p>
+                                    <p class="premium_label"><i class="fa-solid fa-star"></i></p>
                                 {% endif %}
                             </div>
                         </button>
