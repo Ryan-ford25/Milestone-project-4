@@ -4,14 +4,41 @@
 {% block extra_title %} - Profile{% endblock %}
 
 {% block content %}
-    <div>
-        <h1 class="logo-font text-center my-5">My Profile</h1>
+
+<div class="container profile-container">
+
+    <h1 class="logo-font text-center my-5">My Profile</h1>
+
+    <div class="profile-panel">
+
+        <div class="profile-row">
+            <span class="profile-label">First Name</span>
+            <span class="profile-value">{{ user.first_name }}</span>
+        </div>
+
+        <div class="profile-row">
+            <span class="profile-label">Last Name</span>
+            <span class="profile-value">{{ user.last_name }}</span>
+        </div>
+
+        <div class="profile-row">
+            <span class="profile-label">Email</span>
+            <span class="profile-value">{{ user.email }}</span>
+        </div>
+
+        <div class="profile-row">
+            <span class="profile-label">Subscription</span>
+            <span class="profile-value">
+                {% if user.userprofile.is_premium %}
+                    <span class="premium-badge">Premium</span>
+                {% else %}
+                    Free
+                {% endif %}
+            </span>
+        </div>
+
     </div>
-    <div>
-        <div> first name: {{ user.first_name }}</div>
-        <div> last name: {{ user.last_name }}</div>
-        <div> email: {{ user.email }}</div>
-        <div> subscription status: {{ subscription_status }}</div>
-    </div>
+
+</div>
 
 {% endblock %}

@@ -1,9 +1,5 @@
 from django.http import HttpResponse, JsonResponse
-from django.views.decorators.http import require_POST
-from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
-from django.shortcuts import get_object_or_404, redirect
-from django.contrib import messages
 from .models import Question
 from user.models import UserAttempt
 from django.utils import timezone
@@ -62,7 +58,7 @@ def submit_answer(request, question_id):
             question=question,
             selected_choice=selected_number,
             is_correct=is_correct,
-            points_awarded=points
+            points_awarded=points,
         )
 
 

@@ -16,12 +16,6 @@ body{
 }
 
 /* Headers*/
-h1.logo-font{
-  font-weight:700;
-  color:#0F172A;
-  letter-spacing:0.5px;
-}
-
 
 /* Navigation bar */
 #topnav{
@@ -297,4 +291,56 @@ padding-right:40px;
 #accuracyChart{
   max-width:200px;
   margin:auto;
+}
+
+/* Profile Page */
+
+.profile-container{
+  max-width:700px;
+}
+
+.profile-panel{
+  background: var(--card);
+  border-radius:16px;
+  padding:30px;
+  border:1px solid rgba(255,255,255,0.05);
+  box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+.profile-row{
+  display:flex;
+  justify-content:space-between;
+  padding:14px 0;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.profile-row:last-child{
+  border-bottom:none;
+}
+
+.profile-label{
+  font-weight:600;
+  opacity:0.8;
+}
+
+.profile-value{
+  font-weight:600;
+}
+
+.premium-badge{
+  background:linear-gradient(135deg,#8B5CF6,#7C3AED);
+  padding:4px 10px;
+  border-radius:8px;
+  font-size:14px;
+}
+
+/* Footer */
+footer{
+  position: fixed;
+  bottom: 0;
+  background:linear-gradient(135deg,#8B5CF6,#7C3AED);
+  color: var(--text);
+  text-align: center;
+  padding: 20px;
+  width: 100%;
 }
