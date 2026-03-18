@@ -196,3 +196,5 @@ STRIPE_PUBLIC_KEY = os.environ.get("STRIPE_PUBLIC_KEY")
 
 CSRF_TRUSTED_ORIGINS = ['https://*.codeinstitute-ide.net/',
                         'https://*.herokuapp.com/']
+
+ADMIN_INVITE_KEY = os.environ.get("ADMIN_INVITE_KEY")

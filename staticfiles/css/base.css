@@ -319,7 +319,7 @@ footer{
   border-radius:16px;
   padding:30px;
   text-align:center;
-  overflow: hidden;
+  position: relative;
 }
 
 .plan-card:hover{

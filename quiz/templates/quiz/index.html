@@ -13,25 +13,7 @@
                 </div>
             {% endif %}
         </div>
-        <div class="stats-bar">
-            <div class="stat">
-                <span class="stat-icon"></span>
-                <span class="stat-value">{{ user.userprofile.points }}</span>
-                <span class="stat-label">XP</span>
-                </div>
-                
-                <div class="stat">
-                    <span class="stat-icon"></span>
-                    <span class="stat-value">{{ user.userprofile.level }}</span>
-                    <span class="stat-label">Level</span>
-                </div>
-                
-                <div class="stat">
-                    <span class="stat-icon"></span>
-                    <span class="stat-value">{{ user.userprofile.streak }}</span>
-                    <span class="stat-label">Day Streak</span>
-                </div>
-            </div>
+        </div>
         <h1 class="logo-font text-center my-5">Questions</h1>
         <div class="row">
             {% for question in questions %}
