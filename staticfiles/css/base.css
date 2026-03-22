@@ -16,6 +16,19 @@ body{
   padding-bottom: 50px;
 }
 
+.btn-primary{
+  background: var(--primary);
+}
+
+.btn-primary:hover{
+  opacity: 0.85;
+  background-color: var(--primary);
+}
+
+.rad-color{
+  border: solid, black, thin;
+}
+
 /* Headers*/
 
 /* Navigation bar */
@@ -60,38 +73,6 @@ body{
 #topnav{
 padding-left:40px;
 padding-right:40px;
-}
-
-.dropdown-menu{
-  background: #1A1633;
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-}
-
-.dropdown-menu .dropdown-item{
-  color: white !important;
-  font-weight: 500;
-}
-
-.dropdown-menu .dropdown-item:hover{
-  background: rgba(139,92,246,0.2);
-  color: #A78BFA !important;
-}
-
-.dropdown-menu{
-  animation: dropdownFade 0.15s ease;
-}
-
-@keyframes dropdownFade{
-  from{
-    opacity:0;
-    transform:translateY(-5px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
 }
 
 /* Question cards */
