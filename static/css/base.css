@@ -297,6 +297,7 @@ footer{
 }
 
 .plan-card{
+  position: relative;
   background: #2A2460 !important;
   border: 2px solid red !important;
   border-radius:16px;
@@ -323,9 +324,9 @@ footer{
 
 .popular::before{
   content:"BEST VALUE";
-  position:relative;
-  top:10px;
-  right:10px;
+  position:absolute;
+  top:8px;
+  right:8px;
   background:#8B5CF6;
   color:white;
   padding:4px 10px;
