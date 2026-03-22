@@ -13,6 +13,7 @@
 body{
   background: radial-gradient(circle at top,#1A1633,#0B0A1A);
   color: var(--text);
+  padding-bottom: 50px;
 }
 
 /* Headers*/
@@ -297,10 +298,12 @@ padding-right:40px;
 
 /* Footer */
 footer{
+  bottom: 0;
+  position: fixed;
   background:linear-gradient(135deg,#8B5CF6,#7C3AED);
   color: var(--text);
   text-align: center;
-  padding: 10px;
+  padding-top: 10px;
   width: 100%;
   margin-top: 20px;
 }
