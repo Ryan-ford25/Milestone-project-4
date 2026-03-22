@@ -42,37 +42,42 @@
     <title>MathRise {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
-    <nav class="container-fluid">
-        <div id="topnav" class="d-flex justify-content-between align-items-center py-3">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
 
             <!-- Logo -->
-            <a href="{% url 'home' %}" class="nav-link main-logo-link m-0">
-                <h2 class="logo-font my-0"><strong>Math</strong>Rise</h2>
-            </a>
+            <a class="navbar-brand" href="{% url 'home' %}" class="nav-link main-logo-link m-0"><h2 class="logo-font my-0"><strong>Math</strong>Rise</h2></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             
-            <!-- Dashboard -->
-            <a href="{% url 'dashboard' %}" class="nav-link m-0">
-                <h2 class="logo-font my-0 dashboard-title">Dashboard</h2>
-            </a>
-            
-            <!-- Profile Dropdown -->
-            <div class="dropdown">
-                <button class="dropdown-toggle user-icon" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fa-solid fa-circle-user"></i>
-                </button>
-
-                <ul class="dropdown-menu">
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
                     {% if request.user.is_authenticated %}
                         {% if request.user.is_superuser %}
-                            <li><a class="dropdown-item" href="">Question Management</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Question Management</a>
+                            </li>
                         {% endif %}
-                        <li><a class="dropdown-item"  href="{% url 'profile' %}">My Profile</a></li>
-                        <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'dashboard' %}">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                        </li>
                     {% else %}
-                        <li><a class="dropdown-item" href="{% url 'account_signup' %}">Register</a></li>
-                        <li><a class="dropdown-item" href="{% url 'account_login' %}">Login</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'account_login' %}">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'account_signup' %}">Register</a>
+                        </li>
+                    </ul>
                     {% endif %}
-                </ul>
             </div>
         </div>
     </nav>
@@ -88,7 +93,6 @@
     {% endblock %}
 
     <footer class="footer">
-        <p class="m-0 text-center text-black"></p>
         <p class="m-0 text-center text-black">Follow us: <i class="fab fa-facebook-square ms-3"></i>
             <i class="fab fa-twitter-square ms-3"></i>
             <i class="fab fa-instagram-square ms-3"></i>
