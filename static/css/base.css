@@ -295,6 +295,16 @@ padding-right:40px;
   font-size:14px;
 }
 
+/* Footer */
+footer{
+  background:linear-gradient(135deg,#8B5CF6,#7C3AED);
+  color: var(--text);
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+  margin-top: 20px;
+}
+
 /*` Upgrade Page */
 
 .plan-card h3{
