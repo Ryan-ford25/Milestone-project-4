@@ -1,23 +1,34 @@
 :root{
-  --background:#0B0A1A;
-  --card:#1A1633;
+  --background:#17142F;
+  --background-deep:#0B0A1A;
+
+
+  --card:#1F1B3A;
+  --card-hover:#26214D;
+
   --primary:#8B5CF6;
   --primary-dark:#7C3AED;
-  --accent:#22C55E;
-  --text:#F8FAFC;
+  --secondary:#8079CD;
 
+  --accent:#22C55E;
   --gold:#FBBF24;
-  --red:#EF4444;
+  --gold-dark:#F59E0B;
+
+  --text:#F8FAFC;
+  --text-secondary:#C4C1E0;
+  --text-muted:#8A86B8;
+
+  --border:rgba(255,255,255,0.08);
 }
 
 body{
-  background: radial-gradient(circle at top,#1A1633,#0B0A1A);
+  background: radial-gradient(circle at top,#1A1633,var(--background-deep));
   color: var(--text);
   padding-bottom: 50px;
 }
 
 .custom-btn{
-  background-color: var(--primary);
+  background-color: var(--secondary);
   color: white;
 }
 
@@ -30,12 +41,24 @@ body{
   border: solid, black, thin;
 }
 
+.question-card,
+.stat-card,
+.profile-panel{
+  border:1px solid var(--border);
+}
+
+.question-card:hover,
+.stat-card:hover{
+  background:var(--card-hover);
+}
+
 /* Headers*/
 
 /* Navigation bar */
 #topnav{
-  background:linear-gradient(135deg,#8B5CF6,#7C3AED);
-  box-shadow:0 6px 20px rgba(0,0,0,0.4);
+  background:#8079CD;
+  border-bottom:1px solid var(--border);
+  box-shadow:0 6px 20px rgba(0,0,0,0.5);
 }
 
 #topnav a{
@@ -145,7 +168,7 @@ padding-right:40px;
 
 .solve-btn:hover{
   transform:translateY(-2px);
-  box-shadow:0 10px 20px rgba(139,92,246,0.5);
+  box-shadow:0 10px 25px rgba(139,92,246,0.6);
 }
 .correct {
   color: var(--accent);
@@ -282,7 +305,7 @@ padding-right:40px;
 footer{
   bottom: 0;
   position: fixed;
-  background:linear-gradient(135deg,#8B5CF6,#7C3AED);
+  background:#8079CD;
   color: var(--text);
   text-align: center;
   padding-top: 10px;
@@ -299,18 +322,20 @@ footer{
 
 .plan-card{
   position: relative;
-  background: #2A2460 !important;
-  border: 2px solid red !important;
+  background: var(--card) !important;
+  border: 1px solid var(--border) !important;
   border-radius:16px;
   padding:30px;
   text-align:center;
   overflow: hidden;
+  transition: all 0.25s ease;
 }
 
 .plan-card:hover{
   transform:translateY(-10px) scale(1.04);
-  border-color:#A78BFA;
-  box-shadow:0 30px 60px rgba(139,92,246,0.8);
+  border-color:var(--primary);
+  background:var(--card-hover);
+  box-shadow:0 30px 60px rgba(139,92,246,0.6);
 }
 
 .plan-content{
@@ -326,15 +351,14 @@ footer{
 .popular::before{
   content:"BEST VALUE";
   position:absolute;
-  top:8px;
-  right:8px;
-  background:#8B5CF6;
-  color:white;
+  top:10px;
+  right:10px;
+  background:var(--gold);
+  color:#17132E;
   padding:4px 10px;
   border-radius:8px;
   font-size:12px;
-  font-weight:600;
-  z-index:10;
+  font-weight:700
 }
 
 /* Responsive */
