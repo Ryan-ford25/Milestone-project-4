@@ -16,11 +16,12 @@ body{
   padding-bottom: 50px;
 }
 
-.btn-primary{
-  background: var(--primary);
+.custom-btn{
+  background-color: var(--primary);
+  color: white;
 }
 
-.btn-primary:hover{
+.custom-btn:hover{
   opacity: 0.85;
   background-color: var(--primary);
 }

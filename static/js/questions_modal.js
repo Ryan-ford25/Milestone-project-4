@@ -19,6 +19,12 @@ document.addEventListener("DOMContentLoaded", function() {
         form.addEventListener("submit", function(e) {
             e.preventDefault();
 
+            const submitBtn = form.querySelector("button[type='submit']");
+
+            //changed text for button after submitting an answer
+            submitBtn.disabled = true;
+            submitBtn.innerText = "Submitting..."
+
             const selected = form.querySelector("input[name='answer']:checked");
             if (!selected) return;
 
