@@ -62,7 +62,7 @@ MIDDLEWARE = [
     "allauth.account.middleware.AccountMiddleware",
 ]
 
-X-FRAME_OPTIONS = 'ALLOWALL'
+XFRAME_OPTIONS = 'ALLOWALL'
 
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
