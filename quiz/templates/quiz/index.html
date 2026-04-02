@@ -19,11 +19,15 @@
             {% for question in questions %}
                 <div class="col-12 col-md-6 col-lg-4 mb-4">
                     <div class="question-card h-100">
-                        {% if question.id not in answered_questions %}
-                            <button type="button" class="btn btn-link p-0 text-left w-100" data-bs-toggle="modal" data-bs-target="#questionModal{{ question.id }}">
-                        {% else %}
-                            <button type="button" class="btn btn-link p-0 text-left w-100" disabled>
-                        {% endif %}
+                        <!-- if the question has not been answered show the modal if it has been answered, disable the button -->
+                        <button type="button"
+                            class="btn btn-link p-0 text-left w-100"
+                            {% if question.id not in answered_questions %}
+                                data-bs-toggle="modal" data-bs-target="#questionModal{{ question.id }}"
+                            {% else %}
+                                disabled
+                            {% endif %}>
+
                             <div class="card-body">
                                 <h5 class="card-title">{{ question.question_text }}</h5>
                                 <span class="difficulty {{ question.get_difficulty_display|lower }}">{{ question.get_difficulty_display }}</span>
