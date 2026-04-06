@@ -13,30 +13,28 @@
                 </div>
             {% endif %}
         </div>
-        </div>
         <h1 class="logo-font text-center my-5">Questions</h1>
         <div class="row">
             {% for question in questions %}
                 <div class="col-12 col-md-6 col-lg-4 mb-4">
                     <div class="question-card h-100">
-                        <!-- if the question has not been answered show the modal if it has been answered, disable the button -->
-                        <button type="button"
-                            class="btn btn-link p-0 text-left w-100"
-                            {% if question.id not in answered_questions %}
-                                data-bs-toggle="modal" data-bs-target="#questionModal{{ question.id }}"
-                            {% else %}
-                                disabled
-                            {% endif %}>
-
-                            <div class="card-body">
-                                <h5 class="card-title">{{ question.question_text }}</h5>
-                                <span class="difficulty {{ question.get_difficulty_display|lower }}">{{ question.get_difficulty_display }}</span>
-                                <div class="points mt-2">Points: {{ question.points }}</div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">{{ question.question_text }}</h5>
+                            <span class="difficulty {{ question.get_difficulty_display|lower }}">{{ question.get_difficulty_display }}</span>
+                            <div class="points mt-2">Points: {{ question.points }}</div>
                                 {% if question.is_premium %}
                                     <p class="premium_label"><i class="fa-solid fa-star"></i></p>
                                 {% endif %}
+                            <div>
+                                <button type="button" class="btn solve-btn p-0 text-center w-100" data-question-id="{{ question.id }}" {% if question.id not in answered_questions %}data-bs-toggle="modal" data-bs-target="#questionModal{{ question.id }}"{% else %}disabled{% endif %}>
+                                    {% if question.id in answered_questions %}
+                                        <i class="fa-solid fa-check"></i> Answered
+                                    {% else %}
+                                        Solve
+                                    {% endif %}
+                                </button>
                             </div>
-                        </button>
+                        </div>
                     </div>
                 </div>
                 {% include "quiz/modal.html" with question=question answered_questions=answered_questions %}
@@ -44,5 +42,5 @@
         </div>
         {% include "quiz/limit_modal.html" %}
     </div>
-    
+
 {% endblock %}

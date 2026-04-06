@@ -64,13 +64,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
                     input.disabled = true; // prevent changing answer
                 });
-
-                // disable question card button
+                
                 const questionId = form.dataset.questionId;
-                const questionButton = document.querySelector(`button[data-bs-target="#questionModal${questionId}"]`);
+
+                const questionButton = document.querySelector(
+                    `.solve-btn[data-question-id="${questionId}"]`
+                );
 
                 if (questionButton) {
+                    // disable button
                     questionButton.disabled = true;
+
+                    // remove modal trigger
+                    questionButton.removeAttribute("data-bs-toggle");
+                    questionButton.removeAttribute("data-bs-target");
+
+                    // New button text
+                    questionButton.innerHTML = '<i class="fa-solid fa-check"></i> Answered';
+
                 }
 
                 // close modal after 1s
