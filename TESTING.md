@@ -61,9 +61,9 @@ A series of **automated testing** tools were used on the site to check the code 
 
 I have used the recommended [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files.
 
-| Page | Initial Test | Initial Screenshot | Second Test (if applicable) | Second Test Screenshot(if applicable)| Notes |
-| --- | --- | --- | --- | ---| --- |
-| Home | Fail | <img> | Pass | <img> |Initial test failed as I had placed a div element within a button element for the question cards however I then changed this to have a button at the bottom of the cards for answering the questions with updated text when answered.
+| Page | Screenshot | Pass/Fail | Notes |
+| --- | --- | --- | --- | 
+| Home | <img>| Pass: Error | Initial test failed as I had placed a div element within a button element for the question cards however I then changed this to have a button at the bottom of the cards for answering the questions with updated text when answered.
 | Profile |  | Pass: No Errors. |
 | Dashboard | | Pass: No Errors |
 | Sign In | | Pass: No Errors |
