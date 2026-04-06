@@ -1,3 +1,6 @@
+/* jshint esversion: 6 */
+/* global bootstrap */
+
 document.addEventListener("DOMContentLoaded", function() {
 
     function getCookie(name) {
@@ -23,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             //changed text for button after submitting an answer
             submitBtn.disabled = true;
-            submitBtn.innerText = "Submitting..."
+            submitBtn.innerText = "Submitting...";
 
             const selected = form.querySelector("input[name='answer']:checked");
             if (!selected) return;

@@ -41,7 +41,7 @@ body{
 }
 
 .rad-color{
-  border: solid, black, thin;
+  border: thin solid black;
 }
 
 .question-card,

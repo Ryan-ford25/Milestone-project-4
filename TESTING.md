@@ -63,12 +63,13 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 
 | Page | Screenshot | Pass/Fail | Notes |
 | --- | --- | --- | --- | 
-| Home | <img>| Pass: Error | Initial test failed as I had placed a div element within a button element for the question cards however I then changed this to have a button at the bottom of the cards for answering the questions with updated text when answered.
-| Profile |  | Pass: No Errors. |
-| Dashboard | | Pass: No Errors |
-| Sign In | | Pass: No Errors |
-| Sign Up |  | Pass: No Errors |
-| Sign Out |  <img src="assets/documentation/signout-html-validation.png" width=700 alt="Sign Out Screenshot">  | Pass: No Errors |
+| Home | <img src="assets/documentation/home_html_validator.png" width=750 alt="Html Validator Screenshot"> | Pass: Error | Initial test failed as I had placed a div element within a button element for the question cards however I then changed this to have a button at the bottom of the cards for answering the questions with updated text when answered, which then passed the HTML validation test.
+| Profile | <img src="assets/documentation/profile_html_validator.png" width=750 alt="Html Validator Screenshot">  | Pass: No Errors. |
+| Dashboard | <img src="assets/documentation/dashboard_html_validator.png" width=750 alt="Html Validator Screenshot"> | Pass: No Errors |
+| Upgrade |  <img src="assets/documentation/upgrade_html_validator.png" width=750 alt="Html Validator Screenshot">   | Pass: No Errors |
+| Sign In | <img src="assets/documentation/login_html_validator.png" width=750 alt="Html Validator Screenshot">  | Pass: No Errors |
+| Sign Up | <img src="assets/documentation/signup_html_validator.png" width=750 alt="Html Validator Screenshot">  | Pass: No Errors |
+| Sign Out |  <img src="assets/documentation/logout_html_validator.png" width=750 alt="Html Validator Screenshot">   | Pass: No Errors |
 
 
 <a id=css></a>
@@ -77,9 +78,9 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 
 ### CSS
 
-I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate all of my CSS files. Which passed with no errors.
+I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate my CSS file. Which passed with no errors.
 
-<img src="assets/documentation/css-validator.png" alt="CSS validator screenshot" width=750>
+<img src="assets/documentation/css_validation.png" alt="CSS validator screenshot" width=750>
 
 ---
 <a id=javascript></a>
@@ -90,7 +91,7 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 
 | File | Screenshot | Notes |
 | --- | --- | --- |
-| question_modal.js | | Pass: No Errors  |
+| question_modal.js | <img src="assets/documentation/jshint_validation.png" width=750 alt="JShint validation screenshot"> | Pass: No Errors or Warnings |
 
 
 ---
@@ -104,42 +105,35 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 #### Validation For MathRise Project
 | File | Screenshot | Notes |
 | --- | --- | --- |
-| asgi.py |  | Pass: No Errors |
-| settings.py |  | Pass: No Errors |
-| urls.py |  | Pass: No Errors |
-| wsgi.py |  | Pass: No Errors |
+| asgi.py | <img src="assets/documentation/project_asgi_python_validator.png" alt="Asgi.py validator screenshot"> | Pass: No Errors |
+| settings.py | <img src="assets/documentation/project_settings_python_validation.png" alt="Settings.py validator screenshot"> | Pass: No Errors |
+| urls.py | <img src="assets/documentation/project_url_python_validation.png" alt="Urls.py validator screenshot"> | Pass: No Errors |
+| wsgi.py | <img src="assets/documentation/project_wsgi_python_validation.png" alt="Wsgi.py validator screenshot"> | Pass: No Errors |
 
 #### Validation For User App
 | File | Screenshot | Notes |
 | --- | --- | --- |
-| adapters.py |  | Pass: No Errors |
-| admin.py | | Pass: No Errors |
-| apps.py | | Pass: No Errors |
-| forms.py | | Pass: No Errors |
-| models.py |  | Pass: No Errors |
-| urls.py | | Pass: No Errors |
-| utils.py | | Pass: No Errors |
-| views.py | | Pass: No Errors |
+| apps.py | <img src="assets/documentation/user_app_python_validation.png" alt="App.py validator screenshot">  | Pass: No Errors |
+| forms.py | <img src="assets/documentation/user_forms_python_validation.png" alt="Forms.py validator screenshot"> | Pass: No Errors |
+| models.py | <img src="assets/documentation/user_models_python_validation.png" alt="Models.py validator screenshot"> | Pass: No Errors |
+| urls.py | <img src="assets/documentation/user_urls_python_validation.png" alt="Urls.py validator screenshot">  | Pass: No Errors |
+| views.py | <img src="assets/documentation/user_views_python_validation.png" alt="Views.py validator screenshot"> | Pass: No Errors |
 
 #### Validation For Payment App
 | File | Screenshot | Notes |
 | --- | --- | --- |
-| admin.py |  | Pass: No Errors |
-| apps.py | | Pass: No Errors |
-| forms.py |  | Pass: No Errors |
-| models.py |  | Pass: No Errors |
-| urls.py | | Pass: No Errors |
-| views.py |  | Pass: No Errors |
+| apps.py | <img src="assets/documentation/payment_app_python_validation.png" alt="App.py validator screenshot"> | Pass: No Errors |
+| models.py | <img src="assets/documentation/payment_models_python_validation.png" alt="Models.py validator screenshot"> | Pass: No Errors |
+| urls.py | <img src="assets/documentation/payment_url_python_validation.png" alt="Urls.py validator screenshot"> | Pass: No Errors |
+| views.py | <img src="assets/documentation/payment_views_python_validation.png" alt="Views.py validator screenshot"> | Pass: No Errors |
 
 #### Validation For Quiz App
 | File | Screenshot | Notes |
 | --- | --- | --- |
-| admin.py | | Pass: No Errors |
-| apps.py | | Pass: No Errors |
-| forms.py |  | Pass: No Errors |
-| models.py | | Pass: No Errors |
-| urls.py |  | Pass: No Errors |
-| views.py | | Pass: No Errors |
+| apps.py | <img src="assets/documentation/quiz_app_python_validation.png" alt="App.py validator screenshot"> | Pass: No Errors |
+| models.py | <img src="assets/documentation/quiz_models_python_validation.png" alt="Models.py validator screenshot"> | Pass: No Errors |
+| urls.py | <img src="assets/documentation/quiz_url_python_validation.png" alt="Urls.py validator screenshot"> | Pass: No Errors |
+| views.py | <img src="assets/documentation/quiz_views_python_validation.png" alt="Views.py validator screenshot"> | Pass: No Errors |
 
 ---
 

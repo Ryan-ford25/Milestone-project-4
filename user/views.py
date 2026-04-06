@@ -11,6 +11,7 @@ from .models import UserProfile
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 
+
 @login_required
 def dashboardView(request):
     """View for the user dashboard page of the site."""
@@ -27,9 +28,26 @@ def dashboardView(request):
     attempts = user.attempts.all()
 
     # Points
-    points_today = attempts.filter(timestamp__date=today).aggregate(total_points=Sum('points_awarded'))['total_points'] or 0
-    points_week = attempts.filter(timestamp__gte=week_ago).aggregate(total_points=Sum('points_awarded'))['total_points'] or 0
-    points_month = attempts.filter(timestamp__gte=month_ago).aggregate(total_points=Sum ('points_awarded'))['total_points'] or 0
+    points_today = (
+        attempts
+        .filter(timestamp__date=today)
+        .aggregate(total_points=Sum('points_awarded'))['total_points']
+        or 0
+    )
+
+    points_week = (
+        attempts
+        .filter(timestamp__gte=week_ago)
+        .aggregate(total_points=Sum('points_awarded'))['total_points']
+        or 0
+    )
+
+    points_month = (
+        attempts
+        .filter(timestamp__gte=month_ago)
+        .aggregate(total_points=Sum('points_awarded'))['total_points']
+        or 0
+    )
 
     # Accuracy
     total_attempts = attempts.count()
@@ -38,7 +56,6 @@ def dashboardView(request):
     accuracy = 0
     if total_attempts > 0:
         accuracy = round(correct_attempts / total_attempts * 100, 2)
-
 
     context = {
         'userprofile': userprofile,
@@ -50,6 +67,7 @@ def dashboardView(request):
         'accuracy': accuracy,
     }
     return render(request, 'user/dashboard.html', context)
+
 
 @login_required
 def accountProfileView(request):
@@ -70,6 +88,7 @@ def accountProfileView(request):
         'last_name': last_name,
     }
     return render(request, 'user/profile.html', context)
+
 
 @login_required
 def editProfileView(request):

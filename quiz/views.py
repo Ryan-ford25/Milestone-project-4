@@ -11,12 +11,16 @@ from .models import Question
 LETTER_MAP = {1: "A", 2: "B", 3: "C", 4: "D"}
 DAILY_ATTEMPT_LIMIT = 5
 
+
 def homeView(request):
     """"View for the home page of the site."""
     questions = Question.objects.all()
 
     if request.user.is_authenticated:
-        answered_questions = list(UserAttempt.objects.filter(user=request.user).values_list('question_id', flat=True))
+        answered_questions = list(
+            UserAttempt.objects
+            .filter(user=request.user)
+            .values_list('question_id', flat=True))
     else:
         answered_questions = []
 
@@ -27,32 +31,38 @@ def homeView(request):
 
     return render(request, 'quiz/index.html', context)
 
+
 def submit_answer(request, question_id):
     today = timezone.now().date()
 
-    #Counts the number of attempts the user has made today
-    attempts_today = UserAttempt.objects.filter(user=request.user, timestamp__date=today).count()
+#    #Counts the number of attempts the user has made today
+
+    attempts_today = UserAttempt.objects.filter(
+        user=request.user,
+        timestamp__date=today).count()
 
     if not request.user.userprofile.is_premium:
         if attempts_today == DAILY_ATTEMPT_LIMIT:
             return JsonResponse({
-            "limit_reached": True,
-        })
+                "limit_reached": True,
+            })
 
     if request.method == "POST":
         question = Question.objects.get(id=question_id)
         selected = request.POST.get("answer")  # 'A', 'B', 'C', 'D'
-        
+
+        # Convert number to letter
+        correct_letter = LETTER_MAP[question.correct_choice]
+
         # Check if the selected answer is correct
-        correct_letter = LETTER_MAP[question.correct_choice]  # Convert number to letter
         is_correct = selected == correct_letter
 
-        selected_number = {v: k for k, v in LETTER_MAP.items()}.get(selected)  # Convert letter back to number
+        # Convert letter back to number
+        selected_number = {v: k for k, v in LETTER_MAP.items()}.get(selected)
 
         # Points logic
         points = question.points if is_correct else 0
 
-        # Save the attempt
         UserAttempt.objects.update_or_create(
             user=request.user,
             question=question,
@@ -60,7 +70,6 @@ def submit_answer(request, question_id):
             is_correct=is_correct,
             points_awarded=points,
         )
-
 
         return JsonResponse({
             "correct": is_correct,
