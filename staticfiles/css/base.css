@@ -55,6 +55,11 @@ body{
   background:var(--card-hover);
 }
 
+a{
+  color: white;
+  text-decoration: none;
+}
+
 /* Headers*/
 
 /* Navigation bar */

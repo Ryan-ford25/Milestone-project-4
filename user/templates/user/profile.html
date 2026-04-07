@@ -41,15 +41,17 @@
                 {% endif %}
             </span>
         </div>
-        <div>
-            <button>
-                <a href="{% url 'edit_profile' %}">Edit Profile</a>
-            </button>
-        </div>
-        <div>
-            <button>
-                <a href="{% url 'delete_account' %}">Delete Account</a>
-            </button>
+        <div class="profile-row">
+            <div class="mb-3">
+                <button class="solve-btn">
+                    <a href="{% url 'edit_profile' %}">Edit Profile</a>
+                </button>
+            </div>
+            <div class="mb-3">
+                <button class="solve-btn">
+                    <a class="no-lines" href="{% url 'delete_account' %}">Delete Account</a>
+                </button>
+            </div>
         </div>
     </div>
 
