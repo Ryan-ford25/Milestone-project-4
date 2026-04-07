@@ -141,27 +141,27 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 
 ## Lighthouse Audit
 
-I've tested my deployed project using the Lighthouse Audit tool to check for any major issues, the tool tests the websites Performance, Accessibility, Best Practices and SEO(Search Engine Optimization). Thankfully no major issues were found and all pages achieved great scores across both mobile and desktop.
+I've tested my deployed project using the Lighthouse Audit tool to check for any major issues, the tool tests the websites Performance, Accessibility, Best Practices and SEO(Search Engine Optimization). Thankfully no major issues were found and most pages reported with great scores. The Login screen had an accesibilty rating between 70-80 coming up with an amber 
 
 ### MathRise App - Mobile Testing
 | Page | Size | Screenshot | 
 | --- | --- | --- | 
-| Home | Mobile |  | 
-| Sign In | Mobile | |
-| Sign Up | Mobile | |
-| Sign Out | Mobile | |
-| Dashboard | Mobile |  | 
-| Profile | Mobile | | 
+| Home | Mobile | <img src="assets/documentation/home_lighthouse_mobile.png" alt="Home screen Lighthouse report for Mobile"> | 
+| Sign In | Mobile | <img src="assets/documentation/login_lighthouse_mobile.png" alt="Login screen Lighthouse report for Mobile"> |
+| Sign Up | Mobile | <img src="assets/documentation/signup_lighthouse_mobile.png" alt="Signup screen Lighthouse report for Mobile"> |
+| Logout | Mobile | <img src="assets/documentation/logout_lighthouse_mobile.png" alt="Logout screen Lighthouse report for Mobile"> |
+| Dashboard | Mobile | <img src="assets/documentation/dashboard_lighthouse_mobile.png" alt="Dashboard screen Lighthouse report for Mobile"> | 
+| Profile | Mobile | <img src="assets/documentation/profile_lighthouse_mobile.png" alt="Profile screen Lighthouse report for Mobile"> | 
 
 ### MathRise - Desktop Testing
 | Page | Size | Screenshot | 
 | --- | --- | --- | 
-| Home | Desktop |  | 
-| Sign In | Desktop |  |
-| Sign Up | Desktop |  |
-| Sign Out | Desktop |  |
-| Dashboard | Desktop | | 
-| Profile | Desktop | | 
+| Home | Desktop | <img src="assets/documentation/home_lighthouse_desktop.png" alt="Home screen Lighthouse report for Desktop"> | 
+| Sign In | Desktop | <img src="assets/documentation/login_lighthouse_desktop.png" alt="Home screen Lighthouse report for Desktop"> |
+| Sign Up | Desktop | <img src="assets/documentation/signup_lighthouse_desktop.png" alt="Home screen Lighthouse report for Desktop"> |
+| Sign Out | Desktop | <img src="assets/documentation/logout_lighthouse_desktop.png" alt="Home screen Lighthouse report for Desktop"> |
+| Dashboard | Desktop | <img src="assets/documentation/dashboard_lighthouse_desktop.png" alt="Home screen Lighthouse report for Desktop"> | 
+| Profile | Desktop | <img src="assets/documentation/profile_lighthouse_desktop.png" alt="Home screen Lighthouse report for Desktop"> | 
 
 ---
 
@@ -207,24 +207,24 @@ Additionally, I used the Mobile First Plugin, a Chrome extension designed to tes
 #### Mobiles
 | Device | Screen Width(px) | Screen Height (px)|
 | --- | --- | --- |
-| iPhone 5 <br> <img src="">  | 320 | 568 |
-| iPhone 13 <br> <img src="">  | 390 | 844 |
-| Samsung S20 <br> <img src="">  | 360 | 800 |
-| OnePlus Nord 2 <br> <img src=""> | 412 | 915 |
+| iPhone 5 <br> <img src="assets/documentation/iphone5_home.png" height=500>  | 320 | 568 |
+| iPhone 13 <br> <img src="assets/documentation/iphone13_home.png" height=500>   | 390 | 844 |
+| Samsung S20 <br> <img src="assets/documentation/samsungs20_home.png" height=500>   | 360 | 800 |
+| OnePlus Nord 2 <br> <img src="assets/documentation/oneplus_home.png" height=500>  | 412 | 915 |
 
 #### Tablets
 | Device | Screen Width(px) | Screen Height (px)|
 | --- | --- | --- |
-| iPad Mini <br> <img src="">  | 768 | 1024 |
-| Galaxy Tab S7 <br> <img src="">  | 800 | 1280 |
-| iPad Pro 11 <br> <img src=""> | 834 | 1194 |
+| iPad Mini <br> <img src="assets/documentation/ipadmini_home.png" height=500>   | 768 | 1024 |
+| Galaxy Tab S7 <br> <img src="assets/documentation/galaxytab_home.png" height=500>   | 800 | 1280 |
+| iPad Pro 11 <br> <img src="assets/documentation/ipadpro_home.png" height=500>  | 834 | 1194 |
 
 #### Laptops and Desktops
 | Device | Screen Width(px) | Screen Height (px)|
 | --- | --- | --- |
-| MacBook Air 13' <br> <img src="">  | 1280 | 800 |
-| Dell Latitude <br> <img src="">  | 1440 | 809 |
-| iMac 24' <br> <img src="">   | 2048 | 1142 |
+| MacBook Air 13' <br> <img src="assets/documentation/macbookair_home.png" height=500>   | 1280 | 800 |
+| Dell Latitude <br> <img src="assets/documentation/dell_home.png" height=500>   | 1440 | 809 |
+| iMac 24' <br> <img src="assets/documentation/imac_home.png" height=500>    | 2048 | 1142 |
 
 
 ---
@@ -234,24 +234,24 @@ Additionally, I used the Mobile First Plugin, a Chrome extension designed to tes
 #### Mobiles
 | Device | Screen Width(px) | Screen Height (px)|
 | --- | --- | --- |
-| iPhone 5 <br> <img src="">  | 320 | 568 |
-| iPhone 13 <br> <img src=""> | 390 | 844 |
-| Samsung S20 <br> <img src=""> | 360 | 800 |
-| OnePlus Nord 2 <br> <img src=""> | 412 | 915 |
+| iPhone 5 <br> <img src="assets/documentation/iphone5_login.png" height=500>  | 320 | 568 |
+| iPhone 13 <br> <img src="assets/documentation/iphone13_login.png" height=500>   | 390 | 844 |
+| Samsung S20 <br> <img src="assets/documentation/samsungs20_login.png" height=500>   | 360 | 800 |
+| OnePlus Nord 2 <br> <img src="assets/documentation/oneplus_login.png" height=500>  | 412 | 915 |
 
 #### Tablets
 | Device | Screen Width(px) | Screen Height (px)|
 | --- | --- | --- |
-| iPad Mini <br> <img src=""> | 768 | 1024 |
-| Galaxy Tab S7 <br> <img src=""> | 800 | 1280 |
-| iPad Pro 11 <br> <img src=""> | 834 | 1194 |
+| iPad Mini <br> <img src="assets/documentation/ipadmini_login.png" height=500>   | 768 | 1024 |
+| Galaxy Tab S7 <br> <img src="assets/documentation/galaxytab_login.png" height=500>   | 800 | 1280 |
+| iPad Pro 11 <br> <img src="assets/documentation/ipadpro_login.png" height=500>  | 834 | 1194 |
 
 #### Laptops and Desktops
 | Device | Screen Width(px) | Screen Height (px)|
 | --- | --- | --- |
-| MacBook Air 13' <br> <img src=""> | 1280 | 800 |
-| Dell Latitude <br> <img src=""> | 1440 | 809 |
-| iMac 24' <br> <img src="">  | 2048 | 1142 |
+| MacBook Air 13' <br> <img src="assets/documentation/macbookair_login.png" height=500>   | 1280 | 800 |
+| Dell Latitude <br> <img src="assets/documentation/dell_login.png" height=500>   | 1440 | 809 |
+| iMac 24' <br> <img src="assets/documentation/imac_login.png" height=500>    | 2048 | 1142 |
 
 ---
 
@@ -260,24 +260,24 @@ Additionally, I used the Mobile First Plugin, a Chrome extension designed to tes
 #### Mobiles
 | Device | Screen Width(px) | Screen Height (px)|
 | --- | --- | --- |
-| iPhone 5 <br> <img src=""> | 320 | 568 |
-| iPhone 13 <br> <img src="">  | 390 | 844 |
-| Samsung S20 <br> <img src="">  | 360 | 800 |
-| OnePlus Nord 2 <br> <img src="">  | 412 | 915 |
+| iPhone 5 <br> <img src="assets/documentation/iphone5_logout.png" height=500>  | 320 | 568 |
+| iPhone 13 <br> <img src="assets/documentation/iphone13_logout.png" height=500>   | 390 | 844 |
+| Samsung S20 <br> <img src="assets/documentation/samsungs20_logout.png" height=500>   | 360 | 800 |
+| OnePlus Nord 2 <br> <img src="assets/documentation/oneplus_logout.png" height=500>  | 412 | 915 |
 
 #### Tablets
 | Device | Screen Width(px) | Screen Height (px)|
 | --- | --- | --- |
-| iPad Mini <br> <img src=""> | 768 | 1024 |
-| Galaxy Tab S7 <br> <img src="">  | 800 | 1280 |
-| iPad Pro 11 <br> <img src="">  | 834 | 1194 |
+| iPad Mini <br> <img src="assets/documentation/ipadmini_logout.png" height=500>   | 768 | 1024 |
+| Galaxy Tab S7 <br> <img src="assets/documentation/galaxytab_logout.png" height=500>   | 800 | 1280 |
+| iPad Pro 11 <br> <img src="assets/documentation/ipadpro_logout.png" height=500>  | 834 | 1194 |
 
 #### Laptops and Desktops
 | Device | Screen Width(px) | Screen Height (px)|
 | --- | --- | --- |
-| MacBook Air 13' <br> <img src="">  | 1280 | 800 |
-| Dell Latitude <br> <img src="">  | 1440 | 809 |
-| iMac 24' <br> <img src="">   | 2048 | 1142 |
+| MacBook Air 13' <br> <img src="assets/documentation/macbookair_logout.png" height=500>   | 1280 | 800 |
+| Dell Latitude <br> <img src="assets/documentation/dell_logout.png" height=500>   | 1440 | 809 |
+| iMac 24' <br> <img src="assets/documentation/imac_logout.png" height=500>    | 2048 | 1142 |
 
 ---
 
@@ -286,76 +286,100 @@ Additionally, I used the Mobile First Plugin, a Chrome extension designed to tes
 #### Mobiles
 | Device | Screen Width(px) | Screen Height (px)|
 | --- | --- | --- |
-| iPhone 5 <br> <img src=""> | 320 | 568 |
-| iPhone 13 <br> <img src="">  | 390 | 844 |
-| Samsung S20 <br> <img src="">  | 360 | 800 |
-| OnePlus Nord 2 <br> <img src="">  | 412 | 915 |
+| iPhone 5 <br> <img src="assets/documentation/iphone5_register.png" height=500>  | 320 | 568 |
+| iPhone 13 <br> <img src="assets/documentation/iphone13_register.png" height=500>   | 390 | 844 |
+| Samsung S20 <br> <img src="assets/documentation/samsungs20_register.png" height=500>   | 360 | 800 |
+| OnePlus Nord 2 <br> <img src="assets/documentation/oneplus_register.png" height=500>  | 412 | 915 |
 
 #### Tablets
 | Device | Screen Width(px) | Screen Height (px)|
 | --- | --- | --- |
-| iPad Mini <br> <img src=""> | 768 | 1024 |
-| Galaxy Tab S7 <br> <img src=""> | 800 | 1280 |
-| iPad Pro 11 <br> <img src="">  | 834 | 1194 |
+| iPad Mini <br> <img src="assets/documentation/ipadmini_register.png" height=500>   | 768 | 1024 |
+| Galaxy Tab S7 <br> <img src="assets/documentation/galaxytab_register.png" height=500>   | 800 | 1280 |
+| iPad Pro 11 <br> <img src="assets/documentation/ipadpro_register.png" height=500>  | 834 | 1194 |
 
 #### Laptops and Desktops
 | Device | Screen Width(px) | Screen Height (px)|
 | --- | --- | --- |
-| MacBook Air 13' <br> <img src=""> | 1280 | 800 |
-| Dell Latitude <br> <img src="">  | 1440 | 809 |
-| iMac 24' <br> <img src="">  | 2048 | 1142 |
+| MacBook Air 13' <br> <img src="assets/documentation/macbookair_register.png" height=500>   | 1280 | 800 |
+| Dell Latitude <br> <img src="assets/documentation/dell_register.png" height=500>   | 1440 | 809 |
+| iMac 24' <br> <img src="assets/documentation/imac_register.png" height=500>    | 2048 | 1142 |
 
 ---
 
-### Dashboard
+### Dashboard Screen
 
 #### Mobiles
 | Device | Screen Width(px) | Screen Height (px)|
 | --- | --- | --- |
-| iPhone 5 <br> <img src=""> | 320 | 568 |
-| iPhone 13 <br> <img src="">  | 390 | 844 |
-| Samsung S20 <br> <img src=""> | 360 | 800 |
-| OnePlus Nord 2 <br> <img src="">  | 412 | 915 |
+| iPhone 5 <br> <img src="assets/documentation/iphone5_dashboard.png" height=500>  | 320 | 568 |
+| iPhone 13 <br> <img src="assets/documentation/iphone13_dashboard.png" height=500>   | 390 | 844 |
+| Samsung S20 <br> <img src="assets/documentation/samsungs20_dashboard.png" height=500>   | 360 | 800 |
+| OnePlus Nord 2 <br> <img src="assets/documentation/oneplus_dashboard.png" height=500>  | 412 | 915 |
 
 #### Tablets
 | Device | Screen Width(px) | Screen Height (px)|
 | --- | --- | --- |
-| iPad Mini <br> <img src="">  | 768 | 1024 |
-| Galaxy Tab S7 <br> <img src="">  | 800 | 1280 |
-| iPad Pro 11 <br> <img src="">  | 834 | 1194 |
+| iPad Mini <br> <img src="assets/documentation/ipadmini_dashboard.png" height=500>   | 768 | 1024 |
+| Galaxy Tab S7 <br> <img src="assets/documentation/galaxytab_dashboard.png" height=500>   | 800 | 1280 |
+| iPad Pro 11 <br> <img src="assets/documentation/ipadpro_dashboard.png" height=500>  | 834 | 1194 |
 
 #### Laptops and Desktops
 | Device | Screen Width(px) | Screen Height (px)|
 | --- | --- | --- |
-| MacBook Air 13' <br> <img src="">  | 1280 | 800 |
-| Dell Latitude <br> <img src="">  | 1440 | 809 |
-| iMac 24' <br> img src="">   | 2048 | 1142 |
-
+| MacBook Air 13' <br> <img src="assets/documentation/macbookair_dashboard.png" height=500>   | 1280 | 800 |
+| Dell Latitude <br> <img src="assets/documentation/dell_dashboard.png" height=500>   | 1440 | 809 |
+| iMac 24' <br> <img src="assets/documentation/imac_dashboard.png" height=500>    | 2048 | 1142 |
 ---
 
-### Profile
+### Profile Screen
 
 #### Mobiles
 | Device | Screen Width(px) | Screen Height (px)|
 | --- | --- | --- |
-| iPhone 5 <br> <img src="">  | 320 | 568 |
-| iPhone 13 <br> <img src="">  | 390 | 844 |
-| Samsung S20 <br> <img src="">  | 360 | 800 |
-| OnePlus Nord 2 <br> <img src=""> | 412 | 915 |
+| iPhone 5 <br> <img src="assets/documentation/iphone5_profile.png" height=500>  | 320 | 568 |
+| iPhone 13 <br> <img src="assets/documentation/iphone13_profile.png" height=500>   | 390 | 844 |
+| Samsung S20 <br> <img src="assets/documentation/samsungs20_profile.png" height=500>   | 360 | 800 |
+| OnePlus Nord 2 <br> <img src="assets/documentation/oneplus_profile.png" height=500>  | 412 | 915 |
 
 #### Tablets
 | Device | Screen Width(px) | Screen Height (px)|
 | --- | --- | --- |
-| iPad Mini <br> <img src="">  | 768 | 1024 |
-| Galaxy Tab S7 <br> <img src="">  | 800 | 1280 |
-| iPad Pro 11 <br> <img src="">  | 834 | 1194 |
+| iPad Mini <br> <img src="assets/documentation/ipadmini_profile.png" height=500>   | 768 | 1024 |
+| Galaxy Tab S7 <br> <img src="assets/documentation/galaxytab_profile.png" height=500>   | 800 | 1280 |
+| iPad Pro 11 <br> <img src="assets/documentation/ipadpro_profile.png" height=500>  | 834 | 1194 |
 
 #### Laptops and Desktops
 | Device | Screen Width(px) | Screen Height (px)|
 | --- | --- | --- |
-| MacBook Air 13' <br> <img src="">  | 1280 | 800 |
-| Dell Latitude <br> <img src=""> | 1440 | 809 |
-| iMac 24' <br> <img src="">  | 2048 | 1142 |
+| MacBook Air 13' <br> <img src="assets/documentation/macbookair_profile.png" height=500>   | 1280 | 800 |
+| Dell Latitude <br> <img src="assets/documentation/dell_profile.png" height=500>   | 1440 | 809 |
+| iMac 24' <br> <img src="assets/documentation/imac_profile.png" height=500>    | 2048 | 1142 |
+---
+
+### Upgrade Screen
+
+#### Mobiles
+| Device | Screen Width(px) | Screen Height (px)|
+| --- | --- | --- |
+| iPhone 5 <br> <img src="assets/documentation/iphone5_upgrade.png" height=500>  | 320 | 568 |
+| iPhone 13 <br> <img src="assets/documentation/iphone13_upgrade.png" height=500>   | 390 | 844 |
+| Samsung S20 <br> <img src="assets/documentation/samsungs20_upgrade.png" height=500>   | 360 | 800 |
+| OnePlus Nord 2 <br> <img src="assets/documentation/oneplus_upgrade.png" height=500>  | 412 | 915 |
+
+#### Tablets
+| Device | Screen Width(px) | Screen Height (px)|
+| --- | --- | --- |
+| iPad Mini <br> <img src="assets/documentation/ipadmini_upgrade.png" height=500>   | 768 | 1024 |
+| Galaxy Tab S7 <br> <img src="assets/documentation/galaxytab_upgrade.png" height=500>   | 800 | 1280 |
+| iPad Pro 11 <br> <img src="assets/documentation/ipadpro_upgrade.png" height=500>  | 834 | 1194 |
+
+#### Laptops and Desktops
+| Device | Screen Width(px) | Screen Height (px)|
+| --- | --- | --- |
+| MacBook Air 13' <br> <img src="assets/documentation/macbookair_upgrade.png" height=500>   | 1280 | 800 |
+| Dell Latitude <br> <img src="assets/documentation/dell_upgrade.png" height=500>   | 1440 | 809 |
+| iMac 24' <br> <img src="assets/documentation/imac_upgrade.png" height=500>    | 2048 | 1142 |
 
 ---
 
@@ -368,26 +392,49 @@ Defensive programming was manually tested with the below user acceptance testing
 | Page | User Action | Expected Result | Pass/Fail | Screen Clip |
 | --- | --- | --- | --- | --- |
 | Nav links | | | | |
-
-| Home page | | | | |
-
-| Dashboard  | | | | |
-
-| Profile | | | | |
-
+| | Click on Register Link | Redirects user to Register Page | Pass | <img src="assets/documentation/register_link.gif" height=300 alt="Selecting the Register Link from Navigation bar"> |
+| | Click on Login Link | Redirects user to Login Page | Pass | <img src="assets/documentation/login_link.gif" height=300 alt="Selecting the Login Link from Navigation bar"> |
+| | Click on Dashboard Link | Redirects user to Dashboard Page | Pass | <img src="assets/documentation/dashboard_link.gif" height=300 alt="Selecting the Dashboard Link from Navigation bar"> |
+| | Click on Profile Link | Redirects user to Profile Page | Pass | <img src="assets/documentation/profile_link.gif" height=300 alt="Selecting the Profile Link from Navigation bar"> |
+| | Click on Logout Link | Redirects user to Logout Page | Pass | <img src="assets/documentation/logout_link.gif" height=300 alt="Selecting the Logout Link from Navigation bar"> |
+| | Click on MathRise Link | Redirects user to Home page Page | Pass | <img src="assets/documentation/mathrise_link.gif" height=300 alt="Selecting the MathRise Link from Navigation bar"> |
+| | | | | |
+| Home Page | | | | |
+| | Click on Solve button (logged in) | Modal pops up with the question and list of four answers | Pass | <img src="assets/documentation/loggedin_solve_button.gif" height=300 alt="Selecting the solve button whilst loggedin"> |
+| | Click on Solve button (not logged in)| Modal pops up prompting user to login | Pass | <img src="assets/documentation/loggedout_solve_button.gif" height=300 alt="Selecting the solve button whilst logged out"> |
+| | Click on Solve button for a premium question | If user is not a premium member, modal pops up prompting user to become a premium member | Pass | <img src="assets/documentation/premium_question.gif" height=300 alt="Selecting a premium question as a non-premium user"> |
+| | Click on 'Upgrade Now'(If user is not a premium member)| Redirects user to upgrade page | Pass | <img src="assets/documentation/upgrade_button.gif" height=300 alt="Selecting 'Upgrade now' button"> |
+| Dashboard | | | | |
+| | Click on 'Upgrade Now'(If user is not a premium member)| Redirects user to upgrade page | Pass | <img src="assets/documentation/upgrade_dashboard.gif" height=300 alt="Selecting 'Upgrade now' button"> |
+| | | | | |
 | Question Modal | | | | |
-
+| | Click on Radio button | Fills the selected radio button. Only one can be sleected at a time | Pass | <img src="assets/documentation/radio_button.gif" height=300 alt="Selecting A radio button"> |
+| | Click on "Submit Answer" button | Button's text is changed to "Submitting" and button is disbaled | Pass | <img src="assets/documentation/submit_button.gif" height=300 alt="Selecting 'Submit' Button"> |
+| | After Submit button is pressed | Correct answer is highlighted green and if answer chosen by the user is incorrect it is highlighted red | Pass | <img src="assets/documentation/highlighted_answers.gif" height=300 alt="Showing that answers are highlighted">|
+| | After Submit button is pressed | Modal closes after 1 second and the question's button is disabled and inner text is changed to "Answered" | Pass | <img src="assets/documentation/closing_modal.gif" height=300 alt="Showing that the question modals close after one second">|
+| | Click on 'X' button | Modal closes and the question can still be selected by the user | Pass | <img src="assets/documentation/exit_question.gif" height=300 alt="Selecting the 'X' button on modal"> |
+| | | | | |
+| Upgrade Page | | | | |
+| | Click on 'Upgrade Now' button (Monthly offer) | Redirects user to stripe payment page for monthly amount | Pass | <img src="assets/documentation/monthly_plan.gif" height=300 alt="Selecting Monthly upgrade plan Button"> |
+| | Click on 'Upgrade Now' button (Annual offer) | Redirects user to stripe payment page for Annual amount | Pass | <img src="assets/documentation/annual_plan.gif" height=300 alt="Selecting Annual upgrade plan Button">|
+| | | | | |
 | Login Page | | | | |
-| | Enter valid Username | Field will only accept registered users | Pass | |
-| | Enter valid password | Field will only accept password format | Pass |  |
-| | Click on Sign In button | Redirects user to Dashboard | Pass | |
-| | Click on Sign Up link | Redirects user to Sign Up page | Pass | |
-
+| | Enter valid Username | Field will only accept registered users | Pass | <img src="assets/documentation/username_login.gif" height=300 alt="Logging in with Username"> |
+| | Enter valid Email | If the user chooses to use email instead field will only accept registered emails | Pass | <img src="assets/documentation/email_login.gif" height=300 alt="Logging in with Email">|
+| | Enter valid password | Field will only accept password format | Pass | <img src="assets/documentation/username_login.gif" height=300 alt="Logging in with correct password"> |
+| | Click on Login button | Redirects user to Home Page| Pass | <img src="assets/documentation/login_button.gif" height=300 alt="pressing Login button"> |
+| | Click on Sign Up link | Redirects user to Sign Up page | Pass | <img src="assets/documentation/signup_link.gif" height=300 alt="Pressing the 'signup' link">|
+| | | | | |
 | Sign Up Page | | | | |
-
-
+| | Enter valid Username | Field will only accept username format | Pass | <img src="assets/documentation/registering_form.gif" height=300 alt="Filling out Username field"> |
+| | Enter valid password | Field will only accept password format | Pass | <img src="assets/documentation/registering_form.gif" height=300 alt="Filling out password field"> |
+| | Enter valid email (twice) | Field will only accept email format | Pass | <img src="assets/documentation/registering_form.gif" height=300 alt="Filling out Email field"> |
+| | Click on 'Register' button | Redirects user to Verification sent page | Pass |  <img src="assets/documentation/registering_form.gif" height=300 alt="Pressing the 'Register' button after filling out the form">| |
+| | Click on Login Link | Redirects user to Log in Page | Pass |  <img src="assets/documentation/register_to_login.gif" height=300 alt="Pressing the 'login' link"> |
+| | | | | |
 | Log Out Page | | | | |
-| | Click Sign Out button | Logs out user, Redirects user to Home page | Pass |  |
+| | Click Logout button | Logs out user, Redirects user to Home page | Pass | <img src="assets/documentation/logout_button.gif" height=300 alt="Pressing the 'Logout' button">|
+
 
 ---
 
