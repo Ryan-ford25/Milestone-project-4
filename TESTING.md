@@ -442,7 +442,17 @@ Defensive programming was manually tested with the below user acceptance testing
 
 ## User Story Testing
 
----
+| User Stories | How were they achieved? |
+| ------ | -------------------------- |
+| As a registered user, I would like to log into my account so that I can access my saved progress and personalised features. |This has been achieved by adding a signup form that users can create an account with and a login page which the user can enter their new username and password into in order to access the sites features and navigation.|
+| As a new user, I would like to register an account so that I can access personalised features on the platform. | This is achieved by filling out the signup form mentioned in the previous user story.|
+| As a logged-in user, I would like to log out of my account so that I can keep my account secure. | A clearly labelled navigation link 'Logout' can be used to access the logout page where the user can end their session and prevent other people from accessing their account. |
+| As a user, I would like to attempt maths questions so that I can practise and improve my skills. | On the home page are multiple cards with math questions on, by pressing the 'Solve' button on one of these cards the user can answer the given question using the radio buttons presented on a modal.|
+| As a user, I would like to submit my answer and receive immediate feedback so that I can understand my mistakes.| The user can select the 'Submit' button on the question modal which will submit their chosen answer and give immediate feedback by changing the inner text of the button to 'Submitting..' and highlighting the correct answer green. If the user selected the wrong answer their chosen answer will be highlighted red at the same time. |
+| As a user, I would like to track my progress so that I can see my improvement over time. | The dashboard has 'stat-cards' with the amount of points they have recieved today, this week and this month. Premium users are given an accuracy chart to see how many correct to incorrect answers they have given. |
+| As a user, I would like to view my profile so that I can see my account details and activity. | Users can select the 'Profile' link from the navigation bar to be redirected to their profile page which displays the name and email given upon signing up to the site aswell as the subscription type they currently have ('Free' or 'Premium'). |
+| As a user, I would like to have a daily question limit counter so that I know how many questions I can answer. | Although a visible counter is not yet displayed in the homepage, once free users have hit their daily limit of 5 questions a modal pops up to tell them they have no more attempts remaining today. |
+| As a user, I would like to navigate between pages easily so that I can access different parts of the platform. | A Navigation bar with links to all pages is located at the top of the site. The navigation bar will changed depending on whether the user is currently signed in or not. |
 
 <a id=bugs></a>
 
