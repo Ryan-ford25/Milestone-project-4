@@ -1,5 +1,6 @@
-
-from django.shortcuts import render
+from django.contrib.auth import authenticate, logout
+from django.contrib import messages
+from django.shortcuts import redirect, render
 from django.utils import timezone
 from django.db.models import Count, Sum
 from datetime import timedelta
@@ -92,19 +93,31 @@ def accountProfileView(request):
 
 @login_required
 def editProfileView(request):
-    """View for the user profile edit page of the site."""
     user = request.user
-    userprofile = request.user.userprofile
+    userprofile = user.userprofile
 
     if request.method == 'POST':
-        # Update user and user profile information based on form data
-        user.first_name = request.POST.get('first_name', user.first_name)
-        user.last_name = request.POST.get('last_name', user.last_name)
-        user.email = request.POST.get('email', user.email)
+        user.first_name = request.POST.get('first_name') or user.first_name
+        user.last_name = request.POST.get('last_name') or user.last_name
+        user.email = request.POST.get('email') or user.email
+
         user.save()
         userprofile.save()
 
-    context = {
-        'userprofile': userprofile,
-    }
-    return render(request, 'user/edit_profile.html', context)
+        messages.success(request, "Profile updated successfully.")
+        return redirect('edit_profile')
+
+    return render(request, 'user/edit_profile.html', {
+        'userprofile': userprofile
+    })
+
+@login_required
+def deleteAccountView(request):
+    if request.method == 'POST':
+        user = request.user
+        logout(request)
+        user.delete()
+
+        return redirect('home')  
+
+    return render(request, 'user/delete_account.html')

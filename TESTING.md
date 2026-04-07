@@ -37,7 +37,7 @@ Testing was an **integral part of the development process**, ensuring the websit
 
 **Chrome Developer Tools** played a crucial role throughout development, providing real-time insights into performance, responsiveness, and debugging. This proactive approach helped streamline development and ensure the final product adhered to high-quality standards.
 
-Additionally, **ChatGPT** served as a key resource for refining ideas, optimizing content, and overcoming technical challenges. By offering structured guidance, best practices, and alternative solutions, it contributed to improving both the efficiency of development and the overall quality of the final product.
+Additionally, AI tools were used to assist with problem-solving and refining implementation approaches.
 
 To guarantee **cross-device compatibility**, every screen was rigorously tested across various **screen sizes and devices** using Chrome Developer Tools. This process ensured that MathRise was fully responsive, providing a seamless user experience across **desktops, tablets, and mobile devices**.
 
@@ -84,7 +84,7 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 
 ### CSS
 
-I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate my CSS file. Which passed with no errors.
+I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate my CSS file. Which passed with no errors
 
 <img src="assets/documentation/css_validation.png" alt="CSS validator screenshot" width=750>
 
@@ -147,7 +147,7 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 
 ## Lighthouse Audit
 
-I've tested my deployed project using the Lighthouse Audit tool to check for any major issues, the tool tests the website's Performance, Accessibility, Best Practices and SEO (Search Engine Optimization). The login page had a slightly lower accessibility score (70–80) due to contrast. These were reviewed and partially improved, but minor limitations remain.
+I've tested my deployed project using the Lighthouse Audit tool to check for any major issues, the tool tests the website's Performance, Accessibility, Best Practices and SEO (Search Engine Optimization). The login page had a slightly lower accessibility score (70–80) due to contrast. These were reviewed and partially improved, minor contrast issues remain due to design constraints, but do not significantly impact usability.
 
 ### MathRise - Mobile Testing
 | Page | Size | Screenshot | 
