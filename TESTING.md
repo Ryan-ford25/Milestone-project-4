@@ -39,7 +39,13 @@ Testing was an **integral part of the development process**, ensuring the websit
 
 Additionally, **ChatGPT** served as a key resource for refining ideas, optimizing content, and overcoming technical challenges. By offering structured guidance, best practices, and alternative solutions, it contributed to improving both the efficiency of development and the overall quality of the final product.
 
-To guarantee **cross-device compatibility**, every screen was rigorously tested across various **screen sizes and devices** using Chrome Developer Tools. This process ensured that Echoes of Light was fully responsive, providing a seamless user experience across **desktops, tablets, and mobile devices**.
+To guarantee **cross-device compatibility**, every screen was rigorously tested across various **screen sizes and devices** using Chrome Developer Tools. This process ensured that MathRise was fully responsive, providing a seamless user experience across **desktops, tablets, and mobile devices**.
+
+---
+
+## Testing Overview
+
+Testing was conducted using a combination of automated tools and manual testing to ensure functionality, responsiveness, accessibility, and overall user experience across all devices.
 
 ---
 
@@ -141,7 +147,7 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 
 ## Lighthouse Audit
 
-I've tested my deployed project using the Lighthouse Audit tool to check for any major issues, the tool tests the websites Performance, Accessibility, Best Practices and SEO(Search Engine Optimization). Thankfully no major issues were found and most pages reported with great scores. The Login screen had an accesibilty rating between 70-80 coming up with an amber 
+I've tested my deployed project using the Lighthouse Audit tool to check for any major issues, the tool tests the websites Performance, Accessibility, Best Practices and SEO(Search Engine Optimization). The login page had a slightly lower accessibility score (70–80) due to contrast. These were reviewed and partially improved, but minor limitations remain.
 
 ### MathRise App - Mobile Testing
 | Page | Size | Screenshot | 
@@ -456,6 +462,10 @@ Defensive programming was manually tested with the below user acceptance testing
 
 <a id=bugs></a>
 
-## Bugs
+## Key Issues Identified & Fixes
 
-No major bugs were identified during testing.
+- Invalid HTML structure (div inside button) → resolved by restructuring card layout
+- Modal interaction bugs → fixed with improved event handling
+- Accessibility issues on login form → improved contrast
+
+Other than these minor issues no major bugs were found during testing.
