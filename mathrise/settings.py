@@ -44,8 +44,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
+    'user.apps.UserConfig',
     'payment',
-    'user',
     'quiz',
 ]
 

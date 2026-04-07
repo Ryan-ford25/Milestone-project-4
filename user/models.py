@@ -51,9 +51,3 @@ class UserAttempt(models.Model):
             f"{self.user.username} - "
             f"{self.question.question_text} - "
             f"{'Correct' if self.is_correct else 'Incorrect'}")
-
-@receiver(email_confirmed)
-def email_confirmed_handler(request, email_address, **kwargs):
-    user = email_address.user
-    user.userprofile.email_verified = True
-    user.userprofile.save()
