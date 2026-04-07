@@ -4,11 +4,12 @@
 {% block extra_title %} - Edit Profile{% endblock %}
 
 {% block content %}
-<div class="container profile-container">
+<div class="container profile-container my-5">
     <h1 class="logo-font text-center my-5">Edit Profile</h1>
 
     <!-- Edit profile form would go here -->
-    <form method="post" action="{% url 'edit_profile' %}">
+
+    <form class="form" method="post" action="{% url 'edit_profile' %}">
         {% csrf_token %}
         <div class="form-group">
             <label for="first_name">First Name</label>
@@ -22,7 +23,7 @@
             <label for="email">Email</label>
             <input type="email" class="form-control" id="email" name="email" value="{{ user.email }}">
         </div>
-        <button type="submit" class="btn btn-primary">Save Changes</button>
+        <button type="submit" class="btn solve-btn centered">Save Changes</button>
     </form>
 </div>
 {% endblock %}
