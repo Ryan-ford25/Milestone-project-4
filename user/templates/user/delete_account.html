@@ -4,13 +4,17 @@
 {% block extra_title %} - Delete Account{% endblock %}
 
 {% block content %}
-<div class="container profile-container">
-    <h1 class="logo-font text-center my-5">Delete Account</h1>
-    <p>Are you sure you want to delete your account? This action cannot be undone.</p>
-    <form method="post" action="{% url 'delete_account' %}">
-        {% csrf_token %}
-        <button type="submit" class="btn btn-danger">Delete Account</button>
-        <a href="{% url 'profile' %}" class="btn btn-secondary">Cancel</a>
-    </form>
-</div>
+    <div class="container">
+        <h1 class="logo-font text-center my-5">Deleting Account</h1>
+        </div>
+        <h3 class="text-center">Are you sure you want to delete your account?</h3>
+         <p class="text-center">This action cannot be undone. All your data will be permanently deleted.</p>
+
+        <div class="text-center">
+            <form method="post" action="{% url 'delete_account' %}">
+                {% csrf_token %}
+                <button type="submit" class="btn danger btn-danger ms-auto">Confirm</button>
+                <button type="button" class="btn custom-btn ms-auto">Cancel</button>
+            </form>
+        </div>
 {% endblock %}
