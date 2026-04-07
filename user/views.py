@@ -131,7 +131,7 @@ def editProfileView(request):
         userprofile.save()
 
         messages.success(request, "Profile updated successfully.")
-        return redirect('edit_profile')
+        return redirect('profile')
 
     return render(request, 'user/edit_profile.html', {
         'userprofile': userprofile
