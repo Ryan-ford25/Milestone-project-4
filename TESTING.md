@@ -147,14 +147,14 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 
 ## Lighthouse Audit
 
-I've tested my deployed project using the Lighthouse Audit tool to check for any major issues, the tool tests the websites Performance, Accessibility, Best Practices and SEO(Search Engine Optimization). The login page had a slightly lower accessibility score (70–80) due to contrast. These were reviewed and partially improved, but minor limitations remain.
+I've tested my deployed project using the Lighthouse Audit tool to check for any major issues, the tool tests the website's Performance, Accessibility, Best Practices and SEO (Search Engine Optimization). The login page had a slightly lower accessibility score (70–80) due to contrast. These were reviewed and partially improved, but minor limitations remain.
 
-### MathRise App - Mobile Testing
+### MathRise - Mobile Testing
 | Page | Size | Screenshot | 
 | --- | --- | --- | 
 | Home | Mobile | <img src="assets/documentation/home_lighthouse_mobile.png" alt="Home screen Lighthouse report for Mobile"> | 
 | Sign In | Mobile | <img src="assets/documentation/login_lighthouse_mobile.png" alt="Login screen Lighthouse report for Mobile"> |
-| Sign Up | Mobile | <img src="assets/documentation/signup_lighthouse_mobile.png" alt="Signup screen Lighthouse report for Mobile"> |
+| Sign Up | Mobile | <img src="assets/documentation/signup_lighthouse_mobile.png" alt="Sign Up screen Lighthouse report for Mobile"> |
 | Logout | Mobile | <img src="assets/documentation/logout_lighthouse_mobile.png" alt="Logout screen Lighthouse report for Mobile"> |
 | Dashboard | Mobile | <img src="assets/documentation/dashboard_lighthouse_mobile.png" alt="Dashboard screen Lighthouse report for Mobile"> | 
 | Profile | Mobile | <img src="assets/documentation/profile_lighthouse_mobile.png" alt="Profile screen Lighthouse report for Mobile"> | 
@@ -191,10 +191,10 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 
 | Browser | Screenshot | Notes |
 | --- | --- | --- |
-| Chrome | <img src=""> | Works as expected |
-| Firefox | <img src="">   | Works as expected |
-| Edge | <img src="">   | Works as expected |
-| Opera | <img src="">   | Works as expected |
+| Chrome | <img src="assets/documentation/mathrise_chrome.png" width=400 alt="MathRise site loaded on Chrome"> | Works as expected |
+| Firefox | <img src="assets/documentation/mathrise_firefox.png" width=400 alt="MathRise site loaded on Firefox"> | Works as expected |
+| Edge | <img src="assets/documentation/mathrise_edge.png" width=400 alt="MathRise site loaded on Microsoft Edge"> | Works as expected |
+| Opera | <img src="assets/documentation/mathrise_opera.png" width=400 alt="MathRise site loaded on Opera"> | Works as expected |
 
 ---
 
@@ -287,7 +287,7 @@ Additionally, I used the Mobile First Plugin, a Chrome extension designed to tes
 
 ---
 
-### SignUp Screen
+### Sign Up Screen
 
 #### Mobiles
 | Device | Screen Width(px) | Screen Height (px)|
@@ -414,8 +414,8 @@ Defensive programming was manually tested with the below user acceptance testing
 | | Click on 'Upgrade Now'(If user is not a premium member)| Redirects user to upgrade page | Pass | <img src="assets/documentation/upgrade_dashboard.gif" height=300 alt="Selecting 'Upgrade now' button"> |
 | | | | | |
 | Question Modal | | | | |
-| | Click on Radio button | Fills the selected radio button. Only one can be sleected at a time | Pass | <img src="assets/documentation/radio_button.gif" height=300 alt="Selecting A radio button"> |
-| | Click on "Submit Answer" button | Button's text is changed to "Submitting" and button is disbaled | Pass | <img src="assets/documentation/submit_button.gif" height=300 alt="Selecting 'Submit' Button"> |
+| | Click on Radio button | Fills the selected radio button. Only one can be selected at a time | Pass | <img src="assets/documentation/radio_button.gif" height=300 alt="Selecting A radio button"> |
+| | Click on "Submit Answer" button | Button's text is changed to "Submitting" and button is disabled | Pass | <img src="assets/documentation/submit_button.gif" height=300 alt="Selecting 'Submit' Button"> |
 | | After Submit button is pressed | Correct answer is highlighted green and if answer chosen by the user is incorrect it is highlighted red | Pass | <img src="assets/documentation/highlighted_answers.gif" height=300 alt="Showing that answers are highlighted">|
 | | After Submit button is pressed | Modal closes after 1 second and the question's button is disabled and inner text is changed to "Answered" | Pass | <img src="assets/documentation/closing_modal.gif" height=300 alt="Showing that the question modals close after one second">|
 | | Click on 'X' button | Modal closes and the question can still be selected by the user | Pass | <img src="assets/documentation/exit_question.gif" height=300 alt="Selecting the 'X' button on modal"> |
@@ -432,8 +432,8 @@ Defensive programming was manually tested with the below user acceptance testing
 | | Click on Sign Up link | Redirects user to Sign Up page | Pass | <img src="assets/documentation/signup_link.gif" height=300 alt="Pressing the 'signup' link">|
 | | | | | |
 | Sign Up Page | | | | |
-| | Enter valid Username | Field will only accept username format | Pass | <img src="assets/documentation/registering_form.gif" height=300 alt="Filling out Username field"> |
-| | Enter valid password | Field will only accept password format | Pass | <img src="assets/documentation/registering_form.gif" height=300 alt="Filling out password field"> |
+| | Enter valid Username | Field will only accept a valid username format | Pass | <img src="assets/documentation/registering_form.gif" height=300 alt="Filling out Username field"> |
+| | Enter valid password | Field will only accept a valid password format | Pass | <img src="assets/documentation/registering_form.gif" height=300 alt="Filling out password field"> |
 | | Enter valid email (twice) | Field will only accept email format | Pass | <img src="assets/documentation/registering_form.gif" height=300 alt="Filling out Email field"> |
 | | Click on 'Register' button | Redirects user to Verification sent page | Pass |  <img src="assets/documentation/registering_form.gif" height=300 alt="Pressing the 'Register' button after filling out the form">| |
 | | Click on Login Link | Redirects user to Log in Page | Pass |  <img src="assets/documentation/register_to_login.gif" height=300 alt="Pressing the 'login' link"> |
@@ -450,15 +450,15 @@ Defensive programming was manually tested with the below user acceptance testing
 
 | User Stories | How were they achieved? |
 | ------ | -------------------------- |
-| As a registered user, I would like to log into my account so that I can access my saved progress and personalised features. |This has been achieved by adding a signup form that users can create an account with and a login page which the user can enter their new username and password into in order to access the sites features and navigation.|
-| As a new user, I would like to register an account so that I can access personalised features on the platform. | This is achieved by filling out the signup form mentioned in the previous user story.|
+| As a registered user, I would like to log into my account so that I can access my saved progress and personalised features. |This has been achieved by adding a sign up form that users can create an account with and a login page which the user can enter their new username and password into in order to access the sites features and navigation.|
+| As a new user, I would like to register an account so that I can access personalised features on the platform. | This is achieved by filling out the sign up form mentioned in the previous user story.|
 | As a logged-in user, I would like to log out of my account so that I can keep my account secure. | A clearly labelled navigation link 'Logout' can be used to access the logout page where the user can end their session and prevent other people from accessing their account. |
-| As a user, I would like to attempt maths questions so that I can practise and improve my skills. | On the home page are multiple cards with math questions on, by pressing the 'Solve' button on one of these cards the user can answer the given question using the radio buttons presented on a modal.|
+| As a user, I would like to attempt maths questions so that I can practise and improve my skills. | On the home page are multiple cards with maths questions on, by pressing the 'Solve' button on one of these cards the user can answer the given question using the radio buttons presented on a modal.|
 | As a user, I would like to submit my answer and receive immediate feedback so that I can understand my mistakes.| The user can select the 'Submit' button on the question modal which will submit their chosen answer and give immediate feedback by changing the inner text of the button to 'Submitting..' and highlighting the correct answer green. If the user selected the wrong answer their chosen answer will be highlighted red at the same time. |
-| As a user, I would like to track my progress so that I can see my improvement over time. | The dashboard has 'stat-cards' with the amount of points they have recieved today, this week and this month. Premium users are given an accuracy chart to see how many correct to incorrect answers they have given. |
-| As a user, I would like to view my profile so that I can see my account details and activity. | Users can select the 'Profile' link from the navigation bar to be redirected to their profile page which displays the name and email given upon signing up to the site aswell as the subscription type they currently have ('Free' or 'Premium'). |
+| As a user, I would like to track my progress so that I can see my improvement over time. | The dashboard has 'stat-cards' with the amount of points they have received today, this week and this month. Premium users are given an accuracy chart to see how many correct to incorrect answers they have given. |
+| As a user, I would like to view my profile so that I can see my account details and activity. | Users can select the 'Profile' link from the navigation bar to be redirected to their profile page which displays the name and email given upon signing up to the site as well as the subscription type they currently have ('Free' or 'Premium'). |
 | As a user, I would like to have a daily question limit counter so that I know how many questions I can answer. | Although a visible counter is not yet displayed in the homepage, once free users have hit their daily limit of 5 questions a modal pops up to tell them they have no more attempts remaining today. |
-| As a user, I would like to navigate between pages easily so that I can access different parts of the platform. | A Navigation bar with links to all pages is located at the top of the site. The navigation bar will changed depending on whether the user is currently signed in or not. |
+| As a user, I would like to navigate between pages easily so that I can access different parts of the platform. | A Navigation bar with links to all pages is located at the top of the site. The navigation bar will change depending on whether the user is currently signed in or not. |
 
 <a id=bugs></a>
 
@@ -468,4 +468,4 @@ Defensive programming was manually tested with the below user acceptance testing
 - Modal interaction bugs → fixed with improved event handling
 - Accessibility issues on login form → improved contrast
 
-Other than these minor issues no major bugs were found during testing.
+Other than these minor issues, no major bugs were found during testing.
