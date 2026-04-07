@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from quiz.models import Question
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from allauth.account.signals import email_confirmed
 
 
 # Create your models here.
@@ -21,6 +22,7 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     is_premium = models.BooleanField(default=False)
     practice_timer_enabled = models.BooleanField(default=False)
+    email_verified = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.user.username} Profile"
@@ -49,3 +51,9 @@ class UserAttempt(models.Model):
             f"{self.user.username} - "
             f"{self.question.question_text} - "
             f"{'Correct' if self.is_correct else 'Incorrect'}")
+
+@receiver(email_confirmed)
+def email_confirmed_handler(request, email_address, **kwargs):
+    user = email_address.user
+    user.userprofile.email_verified = True
+    user.userprofile.save()

@@ -25,6 +25,11 @@
             <span class="profile-label">Email</span>
             <span class="profile-value">{{ user.email }}</span>
         </div>
+        {% if not user.userprofile.email_verified %}
+            <div class="alert alert-warning mt-2">
+                Email not verified. Please check your inbox.
+            </div>
+        {% endif %}
 
         <div class="profile-row">
             <span class="profile-label">Subscription</span>

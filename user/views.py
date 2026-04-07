@@ -6,12 +6,51 @@ from django.db.models import Count, Sum
 from datetime import timedelta
 from django.contrib.auth.models import User
 from .models import UserProfile
-
-import user
-from .models import UserProfile
+from django.contrib.auth.tokens import default_token_generator
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from django.utils.encoding import force_bytes
+from django.utils.encoding import force_str
+from django.core.mail import send_mail
+from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 
+
+def send_verification_email(request, user):
+
+    """Sends a verification email to the user."""
+
+    token = default_token_generator.make_token(user)
+    uid = urlsafe_base64_encode(force_bytes(user.pk))
+
+    verification_url = request.build_absolute_uri(
+        reverse('verify_email', kwargs={'uidb64': uid, 'token': token})
+    )
+
+    send_mail(
+        'Verify Your Email Address',
+        f'Please click the link below to verify your email address: {verification_url}',
+        'noreply@mathrise.com',
+        [user.email],
+    )
+
+def verify_email(request, uidb64, token):
+    """View to handle email verification link clicks."""
+    try:
+        uid = urlsafe_base64_decode(uidb64).decode()
+        user = User.objects.get(pk=uid)
+    except (TypeError, ValueError, OverflowError, User.DoesNotExist):
+        user = None
+
+    if user and default_token_generator.check_token(user, token):
+        user.userprofile.email_verified = True
+        user.userprofile.save()
+        messages.success(request, "Email verified successfully.")
+        return redirect('profile')
+    else:
+        messages.error(request, "Invalid verification link.")
+        return redirect('home')
+    
 
 @login_required
 def dashboardView(request):
@@ -97,9 +136,18 @@ def editProfileView(request):
     userprofile = user.userprofile
 
     if request.method == 'POST':
+        old_email = user.email
+        new_email = request.POST.get('email')
+
+        if new_email and new_email != old_email:
+            user.email = new_email
+            userprofile.email_verified = False
+
+            send_verification_email(request, user)
+            messages.info(request, "Please check your email to verify your new address.")
+
         user.first_name = request.POST.get('first_name') or user.first_name
         user.last_name = request.POST.get('last_name') or user.last_name
-        user.email = request.POST.get('email') or user.email
 
         user.save()
         userprofile.save()
@@ -110,6 +158,7 @@ def editProfileView(request):
     return render(request, 'user/edit_profile.html', {
         'userprofile': userprofile
     })
+
 
 @login_required
 def deleteAccountView(request):
