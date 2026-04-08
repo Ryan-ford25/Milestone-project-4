@@ -369,6 +369,16 @@ footer{
   font-weight:700
 }
 
+footer{
+  bottom: 0;
+  position: fixed;
+  background:#8079CD;
+  color: var(--text);
+  text-align: center;
+  padding-top: 10px;
+  width: 100%;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .logo{

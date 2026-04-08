@@ -31,6 +31,16 @@ body{
   display:none;
 }
 
+.custom-btn{
+  background-color: var(--secondary);
+  color: white;
+}
+
+.custom-btn:hover{
+  opacity: 0.85;
+  background-color: var(--primary);
+}
+
 .rad-color{
   border: thin solid black;
 }
@@ -45,6 +55,8 @@ body{
 .stat-card:hover{
   background:var(--card-hover);
 }
+
+/* Headers*/
 
 /* Navigation bar */
 #topnav{
@@ -166,7 +178,6 @@ padding-right:40px;
   transform:translateY(-2px);
   box-shadow:0 10px 25px rgba(139,92,246,0.6);
 }
-
 .correct {
   color: var(--accent);
   font-weight: 600;
@@ -356,24 +367,6 @@ footer{
   border-radius:8px;
   font-size:12px;
   font-weight:700
-}
-
-.form{
-  background: var(--card);
-  border-radius:16px;
-  padding:30px;
-  border:1px solid rgba(255,255,255,0.05);
-  box-shadow:0 10px 30px rgba(0,0,0,0.4);
-}
-
-.form-group{
-  margin-bottom:20px;
-}
-
-.centered{
-  display:flex;
-  justify-content:center;
-  margin:auto;
 }
 
 /* Responsive */

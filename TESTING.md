@@ -448,6 +448,11 @@ Defensive programming was manually tested with the below user acceptance testing
 | | Enter valid password | Field will only accept password format | Pass | <img src="assets/documentation/username_login.gif" height=300 alt="Logging in with correct password"> |
 | | Click on Login button | Redirects user to Home Page| Pass | <img src="assets/documentation/login_button.gif" height=300 alt="pressing Login button"> |
 | | Click on Sign Up link | Redirects user to Sign Up page | Pass | <img src="assets/documentation/signup_link.gif" height=300 alt="Pressing the 'signup' link">|
+| | Click "Forgot Password" link | Redirects user to password reset page | Pass | <img src="assets/documentation/forgot_password_link.gif" height=300 alt="Clicking forgot password link"> |
+| | | | | |
+| Forgot Password Page | | | | |
+| | Enter valid email | Sends the user a password reset email| Pass | <img src="assets/documentation/reset_email_sent.gif" height=300 alt="Entering email address and clicking the send email button"> |
+| | Submit empty field | Validation error shown | Pass | <img src="assets/documentation/empty_email_field.gif" height=300 alt="Leaving email field empty to show error message"> |
 | | | | | |
 | Sign Up Page | | | | |
 | | Enter valid Username | Field will only accept a valid username format | Pass | <img src="assets/documentation/registering_form.gif" height=300 alt="Filling out Username field"> |
@@ -479,6 +484,7 @@ Defensive programming was manually tested with the below user acceptance testing
 | As a user, I would like to navigate between pages easily so that I can access different parts of the platform. | A Navigation bar with links to all pages is located at the top of the site. The navigation bar will change depending on whether the user is currently signed in or not. |
 | As a user, I want to edit my profile so that I can keep my account information up to date. | Achieved through the edit profile page where users can update their details with validation. |
 | As a user, I want to delete my account so that I can remove my data from the platform if I choose. | Achieved through a delete profile page with confirmation to prevent accidental deletion. |
+| As a user, I want to reset my password if I forget it so that I can regain access to my account. | Achieved through a password reset system that sends a secure, time-limited link to the user’s registered email. |
 
 <a id=bugs></a>
 
