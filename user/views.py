@@ -163,14 +163,3 @@ def change_password(request):
     return render(request, 'user/edit_password.html', {
         'form': form
     })
-
-def password_reset(request):
-    if request.method == 'POST':
-        email = request.POST.get('email')
-        try:
-            user = User.objects.get(email=email)
-            # Here you would generate a password reset token and send an email
-            messages.success(request, 'Password reset instructions have been sent to your email.')
-        except User.DoesNotExist:
-            messages.error(request, 'No user found with that email address.')
-    return render(request, 'account/password_reset.html')

@@ -1,4 +1,4 @@
-from allauth.account.forms import LoginForm, SignupForm
+from allauth.account.forms import LoginForm, SignupForm, ResetPasswordKeyForm
 from django import forms
 
 
