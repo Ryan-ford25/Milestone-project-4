@@ -67,15 +67,15 @@ A series of **automated testing** tools were used on the site to check the code 
 
 I have used the recommended [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files.
 
-| Page | Screenshot | Pass/Fail | Notes |
-| --- | --- | --- | --- | 
-| Home | <img src="assets/documentation/home_html_validator.png" width=750 alt="Html Validator Screenshot"> | Pass: Error | Initial test failed as I had placed a div element within a button element for the question cards however I then changed this to have a button at the bottom of the cards for answering the questions with updated text when answered, which then passed the HTML validation test.
-| Profile | <img src="assets/documentation/profile_html_validator.png" width=750 alt="Html Validator Screenshot">  | Pass: No Errors. |
-| Dashboard | <img src="assets/documentation/dashboard_html_validator.png" width=750 alt="Html Validator Screenshot"> | Pass: No Errors |
-| Upgrade |  <img src="assets/documentation/upgrade_html_validator.png" width=750 alt="Html Validator Screenshot">   | Pass: No Errors |
-| Sign In | <img src="assets/documentation/login_html_validator.png" width=750 alt="Html Validator Screenshot">  | Pass: No Errors |
-| Sign Up | <img src="assets/documentation/signup_html_validator.png" width=750 alt="Html Validator Screenshot">  | Pass: No Errors |
-| Sign Out |  <img src="assets/documentation/logout_html_validator.png" width=750 alt="Html Validator Screenshot">   | Pass: No Errors |
+| Page | Screenshot | Initial Test | Second Test (If applicable)| Notes |
+| --- | --- | --- | --- | --- |
+| Home | <img src="assets/documentation/home_html_validator.png" width=750 alt="Html Validator Screenshot"> | Failed | Pass: No errors | Initial test failed as I had placed a div element within a button element for the question cards however I then changed this to have a button at the bottom of the cards for answering the questions with updated text when answered, which then passed the HTML validation test.
+| Profile | <img src="assets/documentation/profile_html_validator.png" width=750 alt="Html Validator Screenshot">  | Pass: No Errors. | |
+| Dashboard | <img src="assets/documentation/dashboard_html_validator.png" width=750 alt="Html Validator Screenshot"> | Pass: No Errors | |
+| Upgrade |  <img src="assets/documentation/upgrade_html_validator.png" width=750 alt="Html Validator Screenshot">   | Pass: No Errors | |
+| Sign In | <img src="assets/documentation/login_html_validator.png" width=750 alt="Html Validator Screenshot">  | Pass: No Errors | |
+| Sign Up | <img src="assets/documentation/signup_html_validator.png" width=750 alt="Html Validator Screenshot">  | Pass: No Errors | |
+| Sign Out |  <img src="assets/documentation/logout_html_validator.png" width=750 alt="Html Validator Screenshot">   | Pass: No Errors | |
 
 
 <a id=css></a>
@@ -420,8 +420,24 @@ Defensive programming was manually tested with the below user acceptance testing
 | | After Submit button is pressed | Modal closes after 1 second and the question's button is disabled and inner text is changed to "Answered" | Pass | <img src="assets/documentation/closing_modal.gif" height=300 alt="Showing that the question modals close after one second">|
 | | Click on 'X' button | Modal closes and the question can still be selected by the user | Pass | <img src="assets/documentation/exit_question.gif" height=300 alt="Selecting the 'X' button on modal"> |
 | | | | | |
-| Profile Page|
-| | Click on "Edit Profile" button | Redirects user to edit profile form | | |
+| Profile Page| | | | |
+| | Click on "Edit Profile" button | Redirects user to edit profile form | Pass | <img src="assets/documentation/edit_profile_button.gif" height=300 alt="Clicking Edit profile button"> |
+| | Click on "Delete Account" button | Redirects user to Delete profile page | Pass | <img src="assets/documentation/delete_profile_button.gif" height=300 alt="Clicking delete profile button">  |
+| | | | | |
+| Delete Profile Page| | | | |
+| | Click on "Confirm" button | Deltes the user account and associated data, then redirects | Pass | <img src="assets/documentation/confirm_deletion.gif" height=300 alt="Clicking Edit profile button"> |
+| | Click on "Cancel" button | Redirects user to profile page and no data is lost | Pass | <img src="assets/documentation/cancel_deletion.gif" height=300 alt="Clicking Cancel button"> |
+| | | | | |
+| Edit Profile Page| | | | |
+| | Enter valid Name | Field will only accept a Name in a valid format | Pass | <img src="assets/documentation/updating_profile.gif" height=300 alt="Updating Profile information">  |
+| | Enter valid Email | Field will accept new Email only in a valid format | Pass | <img src="assets/documentation/updating_profile.gif" height=300 alt="Updating Profile information"> |
+| | Click on "Save changes" button | Saves changes and redirects to profile page with newly updated fields, alert pops up prompting email verification if it was changed | Pass | <img src="assets/documentation/updating_profile.gif" height=300 alt="Updating Profile information"> |
+| | Click on "Change Password" button | Redirects user to Change Password Page | Pass |  <img src="assets/documentation/change_password_page.gif" height=300 alt="Clicking on Change Password Button"> |
+| | | | | |
+| Change Password Page| | | | |
+| | Enter current Password | Field will accept current user password only | Pass | <img src="assets/documentation/updating_password.gif" height=300 alt="Updating Password"> |
+| | Enter New Valid Password | Field will only accept a valid password format | Pass | <img src="assets/documentation/updating_password.gif" height=300 alt="Updating Password"> |
+| | Click on "Change Password" button | Updates database with new password and redirects to profile page | Pass | <img src="assets/documentation/updating_password.gif" height=300 alt="Updating Password">|
 | Upgrade Page | | | | |
 | | Click on 'Upgrade Now' button (Monthly offer) | Redirects user to stripe payment page for monthly amount | Pass | <img src="assets/documentation/monthly_plan.gif" height=300 alt="Selecting Monthly upgrade plan Button"> |
 | | Click on 'Upgrade Now' button (Annual offer) | Redirects user to stripe payment page for Annual amount | Pass | <img src="assets/documentation/annual_plan.gif" height=300 alt="Selecting Annual upgrade plan Button">|
@@ -437,7 +453,7 @@ Defensive programming was manually tested with the below user acceptance testing
 | | Enter valid Username | Field will only accept a valid username format | Pass | <img src="assets/documentation/registering_form.gif" height=300 alt="Filling out Username field"> |
 | | Enter valid password | Field will only accept a valid password format | Pass | <img src="assets/documentation/registering_form.gif" height=300 alt="Filling out password field"> |
 | | Enter valid email (twice) | Field will only accept email format | Pass | <img src="assets/documentation/registering_form.gif" height=300 alt="Filling out Email field"> |
-| | Click on 'Register' button | Redirects user to Verification sent page | Pass |  <img src="assets/documentation/registering_form.gif" height=300 alt="Pressing the 'Register' button after filling out the form">| |
+| | Click on 'Register' button | Redirects user to Verification sent page | Pass |  <img src="assets/documentation/registering_form.gif" height=300 alt="Pressing the 'Register' button after filling out the form">|
 | | Click on Login Link | Redirects user to Log in Page | Pass |  <img src="assets/documentation/register_to_login.gif" height=300 alt="Pressing the 'login' link"> |
 | | | | | |
 | Log Out Page | | | | |
@@ -461,6 +477,8 @@ Defensive programming was manually tested with the below user acceptance testing
 | As a user, I would like to view my profile so that I can see my account details and activity. | Users can select the 'Profile' link from the navigation bar to be redirected to their profile page which displays the name and email given upon signing up to the site as well as the subscription type they currently have ('Free' or 'Premium'). |
 | As a user, I would like to have a daily question limit counter so that I know how many questions I can answer. | Although a visible counter is not yet displayed in the homepage, once free users have hit their daily limit of 5 questions a modal pops up to tell them they have no more attempts remaining today. |
 | As a user, I would like to navigate between pages easily so that I can access different parts of the platform. | A Navigation bar with links to all pages is located at the top of the site. The navigation bar will change depending on whether the user is currently signed in or not. |
+| As a user, I want to edit my profile so that I can keep my account information up to date. | Achieved through the edit profile page where users can update their details with validation. |
+| As a user, I want to delete my account so that I can remove my data from the platform if I choose. | Achieved through a delete profile page with confirmation to prevent accidental deletion. |
 
 <a id=bugs></a>
 
@@ -469,5 +487,6 @@ Defensive programming was manually tested with the below user acceptance testing
 - Invalid HTML structure (div inside button) → resolved by restructuring card layout
 - Modal interaction bugs → fixed with improved event handling
 - Accessibility issues on login form → improved contrast
+- Account deletion required confirmation step → implemented safeguard to prevent accidental data loss
 
 Other than these minor issues, no major bugs were found during testing.
