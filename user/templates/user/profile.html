@@ -42,15 +42,11 @@
             </span>
         </div>
         <div class="profile-row">
-            <div class="mb-3">
-                <button class="solve-btn">
-                    <a href="{% url 'edit_profile' %}">Edit Profile</a>
-                </button>
+            <div>
+                <a class="solve-btn" href="{% url 'edit_profile' %}">Edit Profile</a>
             </div>
-            <div class="mb-3">
-                <button class="solve-btn">
-                    <a class="no-lines" href="{% url 'delete_account' %}">Delete Account</a>
-                </button>
+            <div>
+                <a class="solve-btn" href="{% url 'delete_account' %}">Delete Account</a>
             </div>
         </div>
     </div>

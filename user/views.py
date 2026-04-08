@@ -5,17 +5,15 @@ from django.utils import timezone
 from django.db.models import Count, Sum
 from datetime import timedelta
 from django.contrib.auth.models import User
-from urllib3 import request
 from .models import UserProfile, UserAttempt
-from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes
 from django.utils.encoding import force_str
 from django.core.mail import send_mail
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from allauth.account.models import EmailAddress
-from allauth.account.adapter import get_adapter
-from allauth.account.models import EmailAddress
+from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.forms import PasswordChangeForm
 
 
 @login_required
@@ -123,7 +121,7 @@ def editProfileView(request):
             email_address.send_confirmation(request)
 
             messages.info(request, "Please check your email to verify your new address.")
-
+        
         user.first_name = request.POST.get('first_name') or user.first_name
         user.last_name = request.POST.get('last_name') or user.last_name
 
@@ -148,3 +146,20 @@ def deleteAccountView(request):
         return redirect('home')  
 
     return render(request, 'user/delete_account.html')
+
+
+def change_password(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.user, request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)  # Important!
+            messages.success(request, 'Your password was successfully updated!')
+            return redirect('profile')
+        else:
+            messages.error(request, 'Please correct the error below.')
+    else:
+        form = PasswordChangeForm(request.user)
+    return render(request, 'user/edit_password.html', {
+        'form': form
+    })

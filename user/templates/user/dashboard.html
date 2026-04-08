@@ -41,7 +41,7 @@
     {% if not user.userprofile.is_premium %}
         <div class="upgrade-box">
             Upgrade to premium to see your accuracy and more detailed performance insights!
-            <a href="{% url 'upgrade' %}" class="solve-btn">Upgrade Now</a>
+            <a class="solve-btn" href="{% url 'upgrade' %}">Upgrade Now</a>
         </div>
     {% endif %}
 

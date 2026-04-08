@@ -420,6 +420,8 @@ Defensive programming was manually tested with the below user acceptance testing
 | | After Submit button is pressed | Modal closes after 1 second and the question's button is disabled and inner text is changed to "Answered" | Pass | <img src="assets/documentation/closing_modal.gif" height=300 alt="Showing that the question modals close after one second">|
 | | Click on 'X' button | Modal closes and the question can still be selected by the user | Pass | <img src="assets/documentation/exit_question.gif" height=300 alt="Selecting the 'X' button on modal"> |
 | | | | | |
+| Profile Page|
+| | Click on "Edit Profile" button | Redirects user to edit profile form | | |
 | Upgrade Page | | | | |
 | | Click on 'Upgrade Now' button (Monthly offer) | Redirects user to stripe payment page for monthly amount | Pass | <img src="assets/documentation/monthly_plan.gif" height=300 alt="Selecting Monthly upgrade plan Button"> |
 | | Click on 'Upgrade Now' button (Annual offer) | Redirects user to stripe payment page for Annual amount | Pass | <img src="assets/documentation/annual_plan.gif" height=300 alt="Selecting Annual upgrade plan Button">|

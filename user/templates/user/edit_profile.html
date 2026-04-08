@@ -23,7 +23,14 @@
             <label for="email">Email</label>
             <input type="email" class="form-control" id="email" name="email" value="{{ user.email }}">
         </div>
-        <button type="submit" class="btn solve-btn centered">Save Changes</button>
+        <div class="profile-row">
+            <div>
+                <button type="submit" class="btn solve-btn">Save Changes</button>
+            </div>
+            <div>
+                <a href="{% url 'change_password' %}" class="btn solve-btn">Change Password</a>
+            </div>
+        </div>
     </form>
 </div>
 {% endblock %}
